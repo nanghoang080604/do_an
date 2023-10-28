@@ -1,0 +1,56 @@
+#canhan{
+    margin-top: 112px;
+    float:right;
+    width: 50px;
+    height: 50px;
+    
+}
+.bccanhan {
+    float: right;
+    align-items: center;
+    text-align: center;
+}
+#canhan img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+/*
+#noidungcn {
+    display: none;
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    z-index: 1;
+    right: 0;
+    top: 65px; /* Điều chỉnh khoảng cách từ ảnh cá nhân xuống menu
+    text-align: center;
+ */
+#noidungcn {
+    display: none;
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 83px;
+    z-index: 1; 
+    top: 180px;
+  }
+  .ndht,#dx {
+    text-align: left;
+    display: block;
+    margin: 10px 0;
+    text-decoration: none;
+}
+#dx
+{
+  color: black;
+  font-weight: bolder;
+    margin-bottom: 0px;
+}
+  #canhan:hover #noidungcn,
+  #noidungcn:hover {
+      display: block;
+  }
+  
