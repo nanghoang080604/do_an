@@ -8,15 +8,16 @@
     <title>Đồng hồ Casio World Time AE</title>
     <link rel="icon" type="image/x-icon" href="../anh/thuonghieu.jpg">
     <link rel="stylesheet" type="text/css" href="../css/gd2.css">
+    <link rel="stylesheet" type="text/css" href="../css/đinhanggd.css">
+    
 </head>
 <body>
-    <header>
-        <h1>HVH WATCH</h1>
-        <p>Chất lượng và phong cách</p>
-    </header>
-    <div class="tc">
+    <header class="tt1">
+        <div id="th" >
+            <img src="../anh/thuonghieu.jpg" alt="ICON TIỆM">
+        </div>
         <a href="./gdchinh.html">TRANG CHỦ</a>
-       <a href="#">THƯƠNG HIỆU</a>
+        <a href="#">THƯƠNG HIỆU</a>
             <a href="./namchinh.html">NAM</a>
             <a href="./dhnuchinh.html">NỮ</a>
             <a href="./gdchinh.html">SALE⚡</a>
@@ -25,7 +26,18 @@
                 <input type="search" id="search" >
                 <button id="s" type="submit">&#128269;</button>
             </div>
-            <img src="../anh/giohang.jpg">
+            <div id="cartgh">
+                <img src="../anh/giohang.jpg">
+                <label id="cartCount">0</label>
+            </div>
+    </header>
+    <div id="cart" class="hidden">
+        <div id="cartItems">
+            <!-- Đây là nơi để hiển thị danh sách sản phẩm trong giỏ hàng -->
+        </div>
+        <div id="cartControls">
+            <button id="closeCart">Đóng</button>
+        </div>
     </div>
     <div class="chung">
         <div class="anh">
@@ -46,13 +58,14 @@
             <p>Casio World Time AE</p>
             
         </div>
+       
         <div class="ttin">
             <p >THÔNG TIN SẢN PHẨM:</p>
             <P id="d2">Mã Số Sản Phẩm: AE-1200WHD-1AVDF</P>
             <p id="d3">1.300.000 ₫</p>
             <p id="d4">Đồng hồ nam Casio AE1200WHD có mặt đồng hồ vuông to với phong cách thể thao, mặt số điện tử với những tính năng hiện đại tiện dụng, kết hợp với dây đeo bằng kim loại đem lại vẻ mạnh mẽ cá tính dành cho phái nam.</p>
-            <div id="gh">
-                <p>THÊM VÀO GIỎ HÀNG</p>
+            <div id="divgh">
+                <button class="them_vgh">Thêm vào giỏ hàng</button>
             </div>
         </div>
         <div class="mta">
@@ -100,5 +113,6 @@
         </div>
     </div>
     <script src="../js/cdanh.js"></script>
+    <script src="../js/GIOHANG.js"></script>
 </body>
 </html>

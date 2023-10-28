@@ -7,7 +7,7 @@ function checkAndSubmit() {
 
     if (sdtInput.checkValidity() && pwInput.checkValidity()) {
       // Chuyển hướng đến trang khác
-      window.location.href = "./gdchinh.html";
+      window.location.href = "./index2.html";
       return true;
     } else {
       alert("Vui lòng điền đủ thông tin.");
@@ -24,7 +24,7 @@ function checkAndSubmit() {
 
     if (htInput.checkValidity()&&htInput.checkValidity()&&sdtInput.checkValidity() && pwInput.checkValidity()&&pwagInput.checkValidity()&&pwInput.value===pwagInput.value) {
       // Chuyển hướng đến trang khác
-      window.location.href = "./gdchinh.html";
+      window.location.href = "./index2.html";
       return true;
     }
     else if(pwInput.value!=pwagInput.value){
