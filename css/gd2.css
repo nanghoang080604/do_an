@@ -5,12 +5,41 @@ body {
     padding: 0;
     overflow: auto;
 }
-header {
-    background-color:whitesmoke;
-    color:black;
-    text-align: center;
-    padding: 20px;
-}
+#cartgh img {
+    padding-left: 110px;
+    width: 30px;
+    height: 30px;
+    transition: transform 0.5s;
+  }
+ #cartCount
+ {
+    position: absolute;
+    top: 130px;
+    right: 58px; 
+    background-color: red;
+    color: white; 
+    border-radius: 50%; 
+    padding: 2px 5px; /
+
+ }
+ #divgh
+ {
+    margin-left: 10%;
+    width: 46%;
+    margin-top: 10%;
+   
+ }
+ #divgh button
+ {
+    background-color: darksalmon;
+    width: 100%;
+    font-size: 15px;
+    padding:10px 0px 10px 10px;
+    cursor: pointer;
+ }
+ .hidden {
+    display: none;
+  }
 .tc
 {
     margin-top: -20px;
@@ -107,16 +136,9 @@ h1 {
 {
     margin-top: 25px;
 }
-#gh
+#luuy
 {
-    margin-left: 10%;
-    width: 46%;
-    margin-top: 10%;
-    background-color: darksalmon;
-}
-#gh p{
-    font-size: 15px;
-    padding:10px 0px 10px 20px;
+    margin-top: 40px;
 }
 .mta
 {
@@ -178,9 +200,10 @@ h1 {
 {
     transform: rotateX(40deg);
 }
-#gh:hover{
+#divgh button:hover{
     background-color:sienna;
 }
+
 #lg{
     
     border:1px solid rgba(128, 128, 128, 0.5);
