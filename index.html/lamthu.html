@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Cửa Hàng</title>
+    <link rel="stylesheet" href="../css/lamthu.css">
+</head>
+<body>
+    <header>
+        <h1>Cửa Hàng Của Tôi</h1>
+        <div id="cartgh">
+            <img src="../anh/giohang.jpg" alt="Giỏ hàng">
+            <span id="cartCount">0</span>
+        </div>
+    </header>
+
+    <div class="product">
+        <img src="../anh/ddongho5.jpg" alt="Sản phẩm 1">
+        <h2>Sản phẩm 1</h2>
+        <p>Giá: 100.000 VND</p>
+        <button class="addToCart">Thêm vào giỏ hàng</button>
+    </div>
+
+    <div class="product">
+        <img src="../anh/dh1.11.jpg" alt="Sản phẩm 2">
+        <h2>Sản phẩm 2</h2>
+        <p>Giá: 150.000 VND</p>
+        <button class="addToCart">Thêm vào giỏ hàng</button>
+    </div>
+
+    <div class="product">
+        <img src="../anh/dh1.2.jpg" alt="Sản phẩm 3">
+        <h2>Sản phẩm 3</h2>
+        <p>Giá: 200.000 VND</p>
+        <button class="addToCart">Thêm vào giỏ hàng</button>
+    </div>
+
+    <div id="cart" class="hidden">
+        <div id="cartItems">
+            <!-- Đây là nơi để hiển thị danh sách sản phẩm trong giỏ hàng -->
+        </div>
+        <div id="cartControls">
+            <button id="closeCart">Đóng</button>
+        </div>
+    </div>
+    <script src="../js/lamthu.js"></script>
+</body>
+</html>
