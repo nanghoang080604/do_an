@@ -4,16 +4,22 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>HVH WATCH</title>
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+            integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="../css/đinhanggd.css" />
         <link rel="stylesheet" href="../css/dinhdang.css">
         <link rel="stylesheet" href="../css/gdchinh.css">
+        <link rel="stylesheet" href="../css/style_shop.css">
         <link rel="icon" type="image/x-icon" href="../anh/thuonghieu.jpg" >
     </head>
     <body>
-       <header class="tt1">
+
+        <header>
+        <class class="tt1">
             <div id="th" >
                 <img src="../anh/thuonghieu.jpg" alt="ICON TIỆM">
             </div>
+            <div>
             <a href="./index2.html">TRANG CHỦ</a>
             <div class="t01">
                 <a href="./dhnuchinh.html">THƯƠNG HIỆU</a>
@@ -36,15 +42,48 @@
                 <input type="search" id="search" >
                 <button id="s" type="submit">&#128269;</button>
             </div>
+            <div>
+                <button id="cart">
+                    <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                    Giỏ Hàng
+                </button>
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Giỏ Hàng</h5>
+                            <span class="close">&times;</span>
+                        </div>
+                        <div class="modal-body">
+                            <div class="cart-row">
+                                <span class="cart-item cart-header cart-column">Sản Phẩm</span>
+                                <span class="cart-price cart-header cart-column">Giá</span>
+                                <span class="cart-quantity cart-header cart-column">Số Lượng</span>
+                            </div>
+                            <div class="cart-items">
+            
+                            </div>
+                            <div class="cart-total">
+                                <strong class="cart-total-title">Tổng Cộng:</strong>
+                                <span class="cart-total-price">0VNĐ</span>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary close-footer">Đóng</button>
+                            <button type="button" class="btn btn-primary order">Thanh Toán</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="bccanhan">
                 <img id="canhan" src="../anh/anhchu.jpg">
                 <div id="noidungcn">
                     <a class="ndht" href="trangcanhan.html">»Tài Khoản</a>
-                    <a class="ndht" href="#">»Giỏ hàng</a>
                     <a class="ndht" href="#">»Đã mua</a>
                      <a id="dx" href="./giaodien.html">Đăng Xuất</a>
                 </div>
             </div>
+        </div>
+
        </header>
        <div id="thongbao">
         <img src="../anh/aem-banner-top-g-1920-816.webp">
@@ -143,6 +182,7 @@
             </div>
         </div>
         <script type="text/javascript" src="../js/hienthinoidunngcanhan.js"></script>
+        <script src="../js/shop.js"></script>
     </body>
     </body>
 </html>
