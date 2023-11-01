@@ -1,3 +1,4 @@
+// Modal
 var modal = document.getElementById("myModal");
 var btn = document.getElementById("cart");
 var close = document.getElementsByClassName("close")[0];
@@ -53,10 +54,10 @@ for (var i = 0; i < add_cart.length; i++) {
     add.addEventListener("click", function (event) {
 
         var button = event.target;
-        var product = button.parentElement.parentElement;
-        var img = product.parentElement.getElementsByClassName("img-prd")[0].src
-        var title = product.getElementsByClassName("content-product-h3")[0].innerText
-        var price = product.getElementsByClassName("price")[0].innerText
+        var chung = button.parentElement.parentElement;
+        var img = chung.parentElement.getElementsByClassName("img-prd")[0].src
+        var title = chung.getElementsByClassName("content-product-h3")[0].innerText
+        var price = chung.getElementsByClassName("price")[0].innerText
         addItemToCart(title, price, img)
         // Khi thêm sản phẩm vào giỏ hàng thì sẽ hiển thị modal
         modal.style.display = "block";
