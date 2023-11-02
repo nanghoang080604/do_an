@@ -31,18 +31,22 @@
                 <label id="cartCount">0</label>
             </div>
     </header>
-    <div id="cart" class="hidden">
-        <div id="cartItems">
-            <!-- Đây là nơi để hiển thị danh sách sản phẩm trong giỏ hàng -->
-        </div>
-        <div id="cartControls">
-            <button id="closeCart">Đóng</button>
+    <div id="overlay" class="hidden">
+        <div id="cart" class="cart" >
+            <div id="cartItems" >
+            </div>
+             <div id="cartControls">
+                <lable id="ttien">Tổng tiền:</lable>
+                <span id="ttong">0 ₫</span>
+                <button id="chot">MUA NGAY</button>
+                <button id="closeCart">Đóng</button>
+            </div>
         </div>
     </div>
     <div class="chung">
         <div class="anh">
             <div class="a1">
-                <img src="../anh/dongho2.jpg">
+                <img id="anhduoclay" src="../anh/dongho2.jpg">
             </div>
             <div class="a1">
                 <img src="../anh/dh2.1.jpg">
@@ -55,7 +59,7 @@
             </div>
             <a class="prev" onclick="plusSlides(-1)">&#10094;&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;&#10095;</a>
-            <p>Casio World Time AE</p>
+            <p id="tensp">Casio World Time AE</p>
             
         </div>
        
