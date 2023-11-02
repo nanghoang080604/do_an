@@ -15,7 +15,7 @@
         <div id="th" >
             <img src="../anh/thuonghieu.jpg" alt="ICON TIỆM">
         </div>
-        <a href="./gdchinh.html">TRANG CHỦ</a>
+        <a href="./index2.html">TRANG CHỦ</a>
         <a href="#">THƯƠNG HIỆU</a>
             <a href="./namchinh.html">NAM</a>
             <a href="./dhnuchinh.html">NỮ</a>
@@ -30,18 +30,22 @@
                 <label id="cartCount">0</label>
             </div>
     </header>
-    <div id="cart" class="hidden">
-        <div id="cartItems">
-            <!-- Đây là nơi để hiển thị danh sách sản phẩm trong giỏ hàng -->
-        </div>
-        <div id="cartControls">
-            <button id="closeCart">Đóng</button>
+    <div id="overlay" class="hidden">
+        <div id="cart" class="cart" >
+            <div id="cartItems" >
+            </div>
+             <div id="cartControls">
+                <lable id="ttien">Tổng tiền:</lable>
+                <span id="ttong">0 ₫</span>
+                <button id="chot">MUA NGAY</button>
+                <button id="closeCart">Đóng</button>
+            </div>
         </div>
     </div>
     <div class="chung">
         <div class="anh">
             <div class="a1">
-                <img src="../anh/dongho1.jpg">
+                <img id="anhduoclay" src="../anh/dongho1.jpg">
             </div>
             <div class="a1">
                 <img src="../anh/dh1.2.jpg">
@@ -54,14 +58,14 @@
             </div>
             <a class="prev" onclick="plusSlides(-1)">&#10094;&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;&#10095;</a>
-            <p>ORIENT OPEN HEART RA-AR0001S10B</p>
+            <p id="tensp">ORIENT OPEN HEART RA-AR0001S10B</p>
             
         </div>
         
         <div class="ttin">
             <p >THÔNG TIN SẢN PHẨM:</p>
             <P id="d2">Mã Số Sản Phẩm: RA-AR0001S10B</P>
-            <p id="d3">11.760.000 ₫</p>
+            <p id="d3">11.760.000 đ</p>
             <p id="d4">Mẫu Orient RA-AR0001S10B thiết kế đặc trưng Open Heart với ô chân kính lộ ra 1 phần của bô máy cơ tạo nên vẻ độc đáo trước mặt kính Sapphire.</p>
             
             <div id="divgh">
@@ -115,6 +119,5 @@
     </div>
     <script src="../js/cdanh.js"></script>
     <script src="../js/GIOHANG.js"></script>
-    
 </body>
 </html>
