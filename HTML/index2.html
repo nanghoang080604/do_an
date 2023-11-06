@@ -36,6 +36,10 @@
                 <input type="search" id="search" >
                 <button id="s" type="submit">&#128269;</button>
             </div>
+            <div id="cartgh">
+                <img src="../anh/giohang.jpg">
+                <label id="cartCount">0</label>
+            </div>
             <div class="bccanhan">
                 <img id="canhan" src="../anh/anhchu.jpg">
                 <div id="noidungcn">
@@ -46,49 +50,61 @@
                 </div>
             </div>
        </header>
+       <div id="overlay" class="hidden">
+        <div id="cart" class="cart" >
+            <div id="cartItems" >
+            </div>
+             <div id="cartControls">
+                <lable id="ttien">Tổng tiền:</lable>
+                <span id="ttong">0 ₫</span>
+                <button id="chot">MUA NGAY</button>
+                <button id="closeCart">Đóng</button>
+            </div>
+        </div>
+    </div>
        <div id="thongbao">
         <img src="../anh/aem-banner-top-g-1920-816.webp">
    </div>
         <div class="container">
             <div class="product">
-                <img src="../anh/dongho1.jpg" alt="Đồng hồ Orient RA-AR0001S10B">
-                <a href="./gd1.html"><h2>Orient Open Heart RA-AR0001S10B  </h2></a>
-                <p>11.000.000</p>
+                <img  src="../anh/dongho1.jpg" alt="Đồng hồ Orient RA-AR0001S10B">
+                <a href="./gd1.html"><h2 >Orient Open Heart RA-AR0001S10B  </h2></a>
+                <p >11.000.000</p>
             </div>
             <div class="product">
-                <img src="../anh/dongho2.jpg" alt="Đồng hồ Casio World Time AE">
-                <a href="./gd2.html"><h2>Casio World Time AE</h2></a>
-                <p>1.300.000</p>
+                <img  src="../anh/dongho2.jpg" alt="Đồng hồ Casio World Time AE">
+                <a href="./gd2.html"><h2 >Casio World Time AE</h2></a>
+                <p >1.300.000</p>
             </div>
             <div class="product">
-                <img src="../anh/dongho3.jpg" alt="Tissot Le Locle Powermatic 80">
-                <a href="./gd1.html"><h2>Tissot Le Locle Powermatic 80</h2></a>
-                <p>23.000.000</p>
+                <img  src="../anh/dongho3.jpg" alt="Tissot Le Locle Powermatic 80">
+                <a href="./gd1.html"><h2 >Tissot Le Locle Powermatic 80</h2></a>
+                <p >23.000.000</p>
             </div>
             <div class="product">
-                <img src="../anh/dongho4.jpg" alt="Citizen Tsuyosa NJ0154">
-                <a href="./gd2.html"><h2>Citizen Tsuyosa NJ0154</h2></a>
-                <p>13.000.000</p>
+                <img  src="../anh/dongho4.jpg" alt="Citizen Tsuyosa NJ0154">
+                <a href="./gd2.html"><h2 >Citizen Tsuyosa NJ0154</h2></a>
+                <p >13.000.000</p>
             </div>
             <div class="product">
-                <img src="../anh/ddongho5.jpg" alt="Orient SK RA-AA0B02R19B">
-                <a href="./gd1.html"><h2>Orient SK RA-AA0B02R19B</h2></a>
-                <p>12.000.000</p>
+                <img  src="../anh/ddongho5.jpg" alt="Orient SK RA-AA0B02R19B">
+                <a href="./gd1.html"><h2 >Orient SK RA-AA0B02R19B</h2></a>
+                <p >12.000.000</p>
             </div>
             <div class="product">
-                <img src="../dhnu/3_53555-SVMWSV-2-399x399.webp" alt="Saga 53555-SVMWSV">
-                <a href="./gd2.html"><h2>Saga 53555-SVMWSV</h2></a>
-                <p>5.300.000</p>
+                <img  src="../dhnu/3_53555-SVMWSV-2-399x399.webp" alt="Saga 53555-SVMWSV">
+                <a href="./gd2.html"><h2 >Saga 53555-SVMWSV</h2></a>
+                <p >5.300.000</p>
             </div>
             <div class="product">
-                <img src="../dhnu/53766-RGMGGE-2-1-399x399.webp" alt="Saga 53766-GPZMGGE-2">
-                <a href="./gd1.html"><h2>Saga 53766-GPZMGGE-2</h2></a>
-                <p>6.800.000</p>
+                <img  src="../dhnu/53766-RGMGGE-2-1-399x399.webp" alt="Saga 53766-GPZMGGE-2">
+                <a href="./gd1.html"><h2 >Saga 53766-GPZMGGE-2</h2></a>
+                <p >6.800.000</p>
             </div>
             <div class="product">
-                <img src="../dhnu/53766-SVSVSV-2-399x399.webp" alt="Saga 53766-SVSVSV-2">
-                <a href="./gd2.html"><h2>Saga 53766-SVSVSV-2</h2></a>
-                <p>7.600.000</p>
+                <img  src="../dhnu/53766-SVSVSV-2-399x399.webp" alt="Saga 53766-SVSVSV-2">
+                <a href="./gd2.html"><h2 >Saga 53766-SVSVSV-2</h2></a>
+                <p >7.600.000</p>
             </div>
             
         </div>
@@ -114,10 +130,9 @@
 
         </div>
     </div>
-        <div class="lido">
-            <div class="ldc">
+        <div id="ld">
+            <div id="lido">
                 <img src="../anh/lido1.jpg">
-            </div>
         </div>
         <div class="cuoi">
             <div id="cuoi1">
@@ -143,6 +158,7 @@
             </div>
         </div>
         <script type="text/javascript" src="../js/hienthinoidunngcanhan.js"></script>
+        <script type="text/javascript" src="../js/GIOHANG.js"></script>
     </body>
     </body>
 </html>

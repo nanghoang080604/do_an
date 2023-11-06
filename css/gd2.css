@@ -6,7 +6,7 @@ body {
     overflow: auto;
 }
 #cartgh img {
-    padding-left: 110px;
+    padding-left: 170px;
     width: 30px;
     height: 30px;
     transition: transform 0.5s;
@@ -288,7 +288,7 @@ h1 {
 }
 .tc:hover img
 {
-    transform: rotateX(40deg);
+    transform: rotateX(60deg);
 }
 #divgh button:hover{
     background-color:sienna;

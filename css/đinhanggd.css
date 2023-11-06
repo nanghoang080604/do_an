@@ -23,7 +23,7 @@ header {
     padding: 0px;
 }
 header a{
-    margin-right: 60px;
+    margin-right: 50px;
     text-decoration: none;
     text-align: center;
     color: #777;
@@ -127,6 +127,10 @@ header div input{
     background-color:rgb(246, 246, 211);
     margin: 0%;
     display: flex;
+}
+.container a{
+    text-decoration: none;
+    color:black;
 }
 .tpctrang{
     border:#777 solid 0,5px;

@@ -39,7 +39,7 @@ h1 {
     margin: 0 auto;
 }
 #cartgh img {
-    padding-left: 110px;
+    padding-left: 170px;
     width: 30px;
     height: 30px;
     transition: transform 0.5s;
@@ -117,7 +117,8 @@ h1 {
 }
 
 .product-info h3,
-.product-info p {
+.product-info p,
+#cartItems .decrease  {
     font-size: 15px;
     margin-top: 0;
 }
