@@ -95,13 +95,6 @@
     font-size: 18px;
     margin: 0 5px;
 }
-#divgh{
-    display: none;
-}
-.them_vgh{
-    background-color: antiquewhite;
-    cursor: pointer;
-}
 
 #cartgh img {
     padding-left: 90%;
@@ -114,7 +107,7 @@
  {
     position: absolute;
     top: 130px;
-    right: 150px; 
+    right: 200px; 
     background-color: red;
     color: white; 
     border-radius: 50%; 

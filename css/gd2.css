@@ -6,6 +6,7 @@ body {
     overflow: auto;
 }
 #cartgh img {
+    cursor: pointer;
     padding-left: 170px;
     width: 30px;
     height: 30px;
@@ -114,6 +115,10 @@ body {
     height: 10px;
     margin-top: 33px;
     text-align: center;
+}
+#cartControls
+{
+    bottom: 0; 
 }
 #ttien{
     font-weight: bolder;

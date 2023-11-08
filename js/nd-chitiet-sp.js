@@ -1,3 +1,24 @@
+
+/* chuyển động ảnh*/
+let slideIndex = 1;
+
+function showSlides(n) {
+    let slides = document.getElementsByClassName("a1");
+    if (n > slides.length)
+        slideIndex = 1;
+    if (n < 1)
+        slideIndex = slides.length;
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slides[slideIndex - 1].style.display = "block";
+}
+
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+showSlides(slideIndex);
+/*----------------GIỎ HÀNG--------------*/
 const addToCartButtons = document.querySelectorAll('.them_vgh');
 const cart = document.getElementById('cart');
 const cartItems = document.getElementById('cartItems');
@@ -156,3 +177,25 @@ cartButton.addEventListener('click', () => {
         isCartVisible = true; // Đánh dấu rằng giỏ hàng đang hiển thị
     }
 });
+/*----------------------------HIỆN THỊ NỘI DUNG CÁ NHÂN-----------*/
+const canhan = document.getElementById("canhan");
+        const noidungcn = document.getElementById("noidungcn");
+
+        canhan.addEventListener("click", function(event) {
+            event.stopPropagation(); // Ngăn chặn sự kiện click lan ra các phần tử khác
+            if (noidungcn.style.display === "none" || noidungcn.style.display === "") {
+                noidungcn.style.display = "block";
+            } else {
+                noidungcn.style.display = "none";
+            }
+        });
+
+        // Bắt sự kiện click bất kỳ nơi nào trên trang để ẩn #noidungcn khi click ra ngoài
+        document.addEventListener("click", function() {
+            noidungcn.style.display = "none";
+        });
+
+        // Ngăn chặn sự kiện click trên #noidungcn từ lan ra ngoài
+        noidungcn.addEventListener("click", function(event) {
+            event.stopPropagation();
+        });
