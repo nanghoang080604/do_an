@@ -7,7 +7,6 @@
         <link rel="stylesheet" type="text/css" href="../css/đinhanggd.css" />
         <link rel="stylesheet" href="../css/dinhdang.css">
         <link rel="icon" type="image/x-icon" href="../anh/thuonghieu.jpg" >
-        <script type="text/javascript" src="../js/timkiemtheoten.js"></script>
 
     </head>
     <body>
@@ -15,81 +14,55 @@
             <div id="th" >
                 <img src="../anh/thuonghieu.jpg" alt="ICON TIỆM">
             </div>
-            <a href="./index1.html">TRANG CHỦ</a>
+            <a onclick="showAllProducts()">TRANG CHỦ</a>
             <div class="t01">
-                <a href="./dhnu.html">THƯƠNG HIỆU</a>
+                <a onclick="showAllProducts()">THƯƠNG HIỆU</a>
                 <div class="t11">
                     <table>
                         <tr>
-                            <a class="tth" href="https://donghohaitrieu.com/brand/casio">CASIO</a>
-                            <a class="tth" href="https://donghohaitrieu.com/brand/fossil">FOSSIL</a>
-                            <a class="tth" href="https://donghohaitrieu.com/brand/tissot">TISSOT</a>
-                            <a class="tth" href="https://donghohaitrieu.com/brand/saga">SAGA</a>
+                            <a class="tth" onclick="showProductsByBrand('Casio')">CASIO</a>
+                            <a class="tth" onclick="showProductsByBrand('Orient')">ORIENT</a>
+                            <a class="tth" onclick="showProductsByBrand('Tissot')">TISSOT</a>
+                            <a class="tth" onclick="showProductsByBrand('Saga')">SAGA</a>
                         </tr>
                       </table>
                     </div>
               </div>
-            <a id="nam" href="./dhnam.html">NAM</a>
-            <a href="./dhnu.html">NỮ</a>
-            <a  href="./index1.html">SALE⚡</a>
-            <a href="./index1.html">HOT🔥</a>
+            <a id="nam" onclick="showProducts('nam')">NAM</a>
+            <a id="nu" onclick="showProducts('nu')">NỮ</a>
+            <a  onclick="showAllProducts()">SALE⚡</a>
+            <a onclick="showAllProducts()">HOT🔥</a>
             <div >
-                <input type="text" id="searchInput" placeholder="Tìm kiếm">
-                <button id="s" onclick="searchProduct()">&#128269;</button>
+                <input type="text" id="searchInput" placeholder="Tìm kiếm theo tên đồng hồ">
+                <button id="searchButton" onclick="showSearchOptions()">&#128269;</button>
             </div>
-            <div id="searchResults"></div>
+            <div id="searchOptionsModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeSearchOptionsModal()">&times;</span>
+                    <p>Chọn kiểu tìm kiếm:</p>
+                    <button id="tkt_ten" onclick="showSearchByName()" >Theo tên sản phẩm</button>
+                    <button id="tk_khac" onclick="showSearchByBrandAndPrice()" >Theo tên, hãng và giá</button>
+                    <input type="text" class="hidden"  id="productNameInput" placeholder="Nhập tên sản phẩm" >
+                    <input type="text" class="hidden" id="brandInput"  placeholder="Nhập hãng">
+                    <input type="text" class="hidden" id="minPriceInput"  placeholder="Giá tối thiểu">
+                    <input type="text" class="hidden"  id="maxPriceInput" placeholder="Giá tối đa">
+                    <button class="hidden" id="search2" >&#128269;</button>
+                </div>
+            </div>
             <a id="t1" href="./login.html">LOGIN</a>
        </header>
        <div id="thongbao">
         <img src="../anh/aem-banner-top-g-1920-816.webp">
    </div>
-        <div class="container">
-            <div class="product">
-                <img src="../anh/dongho1.jpg" alt="Đồng hồ Orient RA-AR0001S10B">
-                <a href="./gd1phu.html"><h2>Orient Open Heart RA-AR0001S10B  </h2></a>
-                <p>11.000.000</p>
-            </div>
-            <div class="product">
-                <img src="../anh/dongho2.jpg" alt="Đồng hồ Casio World Time AE">
-                <a href="./gh2phu.html"><h2>Casio World Time AE</h2></a>
-                <p>1.300.000</p>
-            </div>
-            <div class="product">
-                <img src="../anh/dongho3.jpg" alt="Tissot Le Locle Powermatic 80">
-                <a href="./gd1phu.html"><h2>Tissot Le Locle Powermatic 80</h2></a>
-                <p>23.000.000</p>
-            </div>
-            <div class="product">
-                <img src="../anh/dongho4.jpg" alt="Citizen Tsuyosa NJ0154">
-                <a href="./gh2phu.html"><h2>Citizen Tsuyosa NJ0154</h2></a>
-                <p>13.000.000</p>
-            </div>
-            <div class="product">
-                <img src="../anh/ddongho5.jpg" alt="Orient SK RA-AA0B02R19B">
-                <a href="./gd1phu.html"><h2>Orient SK RA-AA0B02R19B</h2></a>
-                <p>12.000.000</p>
-            </div>
-            <div class="product">
-                <img src="../dhnu/3_53555-SVMWSV-2-399x399.webp" alt="Saga 53555-SVMWSV">
-                <a href="./gh2phu.html"><h2>Saga 53555-SVMWSV</h2></a>
-                <p>5.300.000</p>
-            </div>
-            <div class="product">
-                <img src="../dhnu/53766-RGMGGE-2-1-399x399.webp" alt="Saga 53766-GPZMGGE-2">
-                <a href="./gd1phu.html"><h2>Saga 53766-GPZMGGE-2</h2></a>
-                <p>6.800.000</p>
-            </div>
-            <div class="product">
-                <img src="../dhnu/53766-SVSVSV-2-399x399.webp" alt="Saga 53766-SVSVSV-2">
-                <a href="./gh2phu.html"><h2>Saga 53766-SVSVSV-2</h2></a>
-                <p>7.600.000</p>
-            </div>
-            <div id="chuyentrang">
+   <div id="noResultsMessage" >
+    Không có sản phẩm bạn tìm kiếm!
+</div>
+<div id="product-container"></div>
+    <div id="chuyentrang">
                 <div id="dauct">
                     <div class="tpctrang">
                         <a href="#">&lt;</a>
                     </div>
-                    
                 </div>
                 <div class="tpctrang">
                     <a  href="#">1</a>
@@ -134,6 +107,8 @@
                 <a href="#https://www.facebook.com/nangne0806?mibextid=LQQJ4d"><img class="mxh" src="../anh/inta.jpg"></a>
             </div>
         </div>
-
+        <script type="text/javascript" src="../js/js1.js"></script>
+        <script type="text/javascript" src="../js/noidungweb.js"></script>
+       
     </body>
 </html>

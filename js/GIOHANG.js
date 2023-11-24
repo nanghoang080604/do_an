@@ -11,8 +11,8 @@ addToCartButtons.forEach(button => {
     button.addEventListener('click', () => {
         cartCount++;
         updateCartCount();
-        const product = createCartItem();
-        cartItems.appendChild(product);
+        const product1= createCartItem();
+        cartItems.appendChild(product1);
         deleteCart(); // Gắn sự kiện xóa sản phẩm sau khi sản phẩm được tạo
         carttotal(); // Tính tổng tiền sau khi thêm sản phẩm
     });
@@ -23,17 +23,17 @@ closeCartButton.addEventListener('click', () => {
 });
 
 function createCartItem() {
-    const product = document.createElement('div');
-    product.classList.add('cart-item');
+    const product1= document.createElement('div');
+    product1.classList.add('cart-item');
 
     // Tạo ảnh sản phẩm
     const img = document.createElement('img');
     img.src = document.getElementById('anhduoclay').src;
-    product.appendChild(img);
+    product1.appendChild(img);
     //tạo produtinfo
     const productInfo = document.createElement('div');
     productInfo.classList.add('product-info');
-    product.appendChild(productInfo);
+    product1.appendChild(productInfo);
 
     // Tên sản phẩm
     const productName = document.createElement('h3');
@@ -49,18 +49,18 @@ function createCartItem() {
     const decreaseButton = document.createElement('button');
     decreaseButton.classList.add('decrease');
     decreaseButton.textContent = '-';
-    product.appendChild(decreaseButton);
+    product1.appendChild(decreaseButton);
 
     const quantityInput = document.createElement('input');
     quantityInput.type = 'number';
     quantityInput.value = 1;
     quantityInput.min = 1;
-    product.appendChild(quantityInput);
+    product1.appendChild(quantityInput);
 
     const increaseButton = document.createElement('button');
     increaseButton.classList.add('increase');
     increaseButton.textContent = '+';
-    product.appendChild(increaseButton);
+    product1.appendChild(increaseButton);
     //tăng
     increaseButton.addEventListener('click', () => {
         quantityInput.value = parseInt(quantityInput.value) + 1;
@@ -78,9 +78,9 @@ function createCartItem() {
     const deleteButton = document.createElement('button');
     deleteButton.classList.add('delete');
     deleteButton.textContent = 'Xóa';
-    product.appendChild(deleteButton);
+    product1.appendChild(deleteButton);
 
-    return product;
+    return product1;
 }
 
 function updateCartCount() {
