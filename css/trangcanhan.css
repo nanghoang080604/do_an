@@ -58,7 +58,9 @@ a,#ten{
     float:right;
     padding-right: 0px;
 }
-
+#dc{
+    display: inline;
+}
 #tquat,#moi
 {
     position: absolute;

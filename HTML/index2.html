@@ -44,17 +44,22 @@
                 <img id="canhan" src="../anh/anhchu.jpg">
                 <div id="noidungcn">
                     <a class="ndht" href="trangcanhan.html">»Tài Khoản</a>
-                    <a class="ndht" href="#">»Đã mua</a>
+                    <a class="ndht" id="lichsumua" onclick="damua()">»Đã mua</a>
                      <a id="dx" href="./giaodien.html">Đăng Xuất</a>
                 </div>
             </div>
        </header>
+       <p id="closelsmua" onclick="closelsmua()">&times;</p>
+       <div id="lsmua" class="hidden" >
+        <p id="textlsmua">(Bạn chưa mua sản phẩm nào )</p>
+       </div>
+       
        <div id="overlay" class="hidden">
         <div id="cart" class="cart" >
             <div id="cartItems" >
             </div>
              <div id="cartControls">
-                <lable id="ttien">Tổng tiền:</lable>
+                <label id="ttien">Tổng tiền:</label>
                 <span id="ttong">0 ₫</span>
                 <button id="chot">MUA NGAY</button>
                 <button id="closeCart">Đóng</button>

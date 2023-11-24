@@ -17,3 +17,37 @@
     display: block;
 
 }
+/*lịch sử mua*/
+#lsmua
+{
+    display: none;
+    position: absolute;
+    width: 40%;
+    margin-left: 58%;
+    height: 50%;
+    overflow: scroll;
+    z-index: 1;
+    background-color: #fefefe;
+    padding: 15px;
+    border: 1px solid #888;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+#closelsmua
+{
+    position: absolute;
+    right: 15px;
+    top: 170px;
+    font-size: 28px;
+    font-weight: bold;
+    display: none;
+    z-index: 2; /* Đặt z-index cao hơn để đảm bảo nó hiển thị trên #lsmua */
+    cursor: pointer;
+}
+#textlsmua
+{
+    text-align: center;
+    color: #888;
+    font-size: 15px;
+    font-weight: bold;
+}
+

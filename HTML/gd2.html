@@ -9,40 +9,91 @@
     <link rel="icon" type="image/x-icon" href="../anh/thuonghieu.jpg">
     <link rel="stylesheet" type="text/css" href="../css/gd2.css">
     <link rel="stylesheet" type="text/css" href="../css/đinhanggd.css">
-    
+    <link rel="stylesheet" href="../css/gdchinh.css">
+    <link rel="stylesheet" type="text/css" href="../css/dinhdang.css">
 </head>
 <body>
     <header class="tt1">
         <div id="th" >
             <img src="../anh/thuonghieu.jpg" alt="ICON TIỆM">
         </div>
-        <a href="./index2.html">TRANG CHỦ</a>
-        <a href="#">THƯƠNG HIỆU</a>
-            <a href="./namchinh.html">NAM</a>
-            <a href="./dhnuchinh.html">NỮ</a>
-            <a href="./index2.html">SALE⚡</a>
-            <a href="./index2.html">HOT🔥</a>
-            <div>
-                <input type="search" id="search" >
-                <button id="s" type="submit">&#128269;</button>
-            </div>
-            <div id="cartgh">
-                <img src="../anh/giohang.jpg">
-                <label id="cartCount">0</label>
-            </div>
-    </header>
-    <div id="overlay" class="hidden">
-        <div id="cart" class="cart" >
-            <div id="cartItems" >
-            </div>
-             <div id="cartControls">
-                <lable id="ttien">Tổng tiền:</lable>
-                <span id="ttong">0 ₫</span>
-                <button id="chot">MUA NGAY</button>
-                <button id="closeCart">Đóng</button>
+        <a href="index2.html">TRANG CHỦ</a>
+        <div class="t01">
+            <a href="index2.html">THƯƠNG HIỆU</a>
+            <div class="t11">
+                <table>
+                    <tr>
+                        <a class="tth"  href="index2.html">CASIO</a>
+                        <a class="tth"  href="index2.html">ORIENT</a>
+                        <a class="tth"  href="index2.html">TISSOT</a>
+                        <a class="tth"  href="index2.html">SAGA</a>
+                    </tr>
+                  </table>
+                </div>
+          </div>
+        <a id="nam"  href="index2.html">NAM</a>
+        <a id="nu"  href="index2.html">NỮ</a>
+        <a href="index2.html">SALE⚡</a>
+        <a href="index2.html">HOT🔥</a>
+        <div >
+            <input type="text" id="searchInput" placeholder="Tìm kiếm theo tên">
+            <button id="searchButton" >&#128269;</button>
+        </div>
+        <div id="cartgh">
+            <img src="../anh/giohang.jpg">
+            <label id="cartCount">0</label>
+        </div>
+        <div class="bccanhan">
+            <img id="canhan" src="../anh/anhchu.jpg">
+            <div id="noidungcn">
+                <a class="ndht" href="trangcanhan.html">»Tài Khoản</a>
+                <a class="ndht" id="lichsumua" onclick="damua()">»Đã mua</a>
+                 <a id="dx" href="./index1.html">Đăng Xuất</a>
             </div>
         </div>
+   </header>
+   <p id="closelsmua" onclick="closelsmua()">&times;</p>
+   <div id="lsmua" class="hidden" >
+    
+    <p id="textlsmua">(Bạn chưa mua sản phẩm nào )</p>
+   </div>
+   <div id="overlay" class="hidden">
+    <div id="cart" class="cart" >
+        <div id="cartItems" >
+            
+        </div>
+         <div id="cartControls">
+            <label id="ttien">Tổng tiền:</label>
+            <span id="ttong">0 ₫</span>
+            <button id="chot" onclick="showlc()">MUA NGAY</button>
+            <button id="closeCart">Đóng</button>
+        </div>
+        <div id="lcdc" class="hidden">
+            <div class="show_lc">
+                <span class="close" onclick="closelc()">&times;</span>
+                <button id="dctcn" onclick="dctcn()">Lấy địa chỉ của tài khoản này</button>
+                <button id="tddc" onclick="dcmoi()">Nhập địa chỉ mới</button>
+            </div>
+        </div>
+        <div id="nhapttmoi" class="hidden">
+            <span class="close" onclick="closedcmoi()">&times;</span>
+            <form class="myForm">
+                <div>
+                    <label for="ht">Họ và tên:</label><br>
+                    <input type="text" id="ht" name="ht" required><br>
+                </div>
+                <div>
+                    <label for="ad">Địa chỉ</label>:</label><br>
+                    <input type="text" id="ad" name="ad" required><br>
+                </div>
+                <div>
+                    <label for="sdt">Số điện thoại:</label><br>
+                    <input type="tel" id="sdt" name="std" required><br>
+                </div>
+                <button onclick="checktt()" type="button">HOÀN THÀNH</button>
+        </div>
     </div>
+</div>
     <div class="chung">
         <div class="anh">
             <div class="a1">
@@ -116,7 +167,6 @@
             <p>5.300.000</p>
         </div>
     </div>
-    <script src="../js/cdanh.js"></script>
-    <script src="../js/GIOHANG.js"></script>
+    <script type="text/javascript" src="../js/nd-chitiet-sp.js"></script>
 </body>
 </html>

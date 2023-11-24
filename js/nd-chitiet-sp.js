@@ -100,8 +100,9 @@ function createCartItem() {
     deleteButton.classList.add('delete');
     deleteButton.textContent = 'Xóa';
     product1.appendChild(deleteButton);
+    
 
-    return product1;
+    return product1; 
 }
 
 function updateCartCount() {
@@ -141,7 +142,10 @@ function carttotal() {
     });
 
     // Hiển thị tổng tiền
+    const ttongLabel = document.getElementById('ttong');
     ttongLabel.textContent = `${totalAmount.toLocaleString()} ₫`;
+
+
 }
 
 closeCartButton.addEventListener('click', () => {
@@ -150,24 +154,50 @@ closeCartButton.addEventListener('click', () => {
     isCartVisible = false; // Đánh dấu rằng giỏ hàng đang ẩn
 });
 //mua hàng
-const chotButton = document.getElementById('chot');
-const ttongLabel = document.getElementById('ttong');
-chotButton.addEventListener('click', () => {
-    // Xóa tất cả sản phẩm trong giỏ hàng
-    cartItems.innerHTML = '';
-    cartCount = 0;
-    updateCartCount();
+//mua hàng
+function muahang() {
+    if (cartCount > 0) {
+        const chotButton = document.getElementById('chot');
+        const ttongLabel = document.getElementById('ttong');
+        
+        // Tạo một bản sao của tất cả sản phẩm trong giỏ hàng
+        const cartItemsClone = cartItems.cloneNode(true);
 
-    // Hiển thị thông báo
-    alert('Bạn đã mua thành công sản phẩm');
-    //update tổng tiền
-    totalAmount=0;
-    ttongLabel.textContent = `${totalAmount.toLocaleString()} ₫`;
-    //tắt giỏ hàng
-    cart.classList.add('hidden');
-    overlay.classList.add('hidden');
-    isCartVisible = false;
-});
+        // Thêm bản sao vào lsmua
+        document.getElementById('lsmua').appendChild(cartItemsClone);
+
+        // Xóa tất cả sản phẩm trong giỏ hàng
+        cartItems.innerHTML = '';
+
+        // Cập nhật số lượng và tổng tiền
+        cartCount = 0;
+        totalAmount = 0;
+        updateCartCount();
+        ttongLabel.textContent = `${totalAmount.toLocaleString()} ₫`;
+
+        // Hiển thị thông báo
+        alert('Bạn đã mua thành công sản phẩm');
+
+        // Đóng giỏ hàng
+        cart.classList.add('hidden');
+        overlay.classList.add('hidden');
+        isCartVisible = false;
+
+        // Đóng lịch sử mua
+        document.getElementById("lsmua").style.display = "none";
+
+        // Tạo một phiên bản đơn giản của sản phẩm trong giỏ hàng và thêm vào lịch sử mua
+        const cartItemHistory = createCartItem2();
+        const lsmua = document.getElementById('lsmua');
+        lsmua.innerHTML = '';  // Xóa tất cả nội dung hiện tại trong lsmua
+        lsmua.appendChild(cartItemHistory);
+        lsmua.scrollTop = lsmua.scrollHeight; // Cuộn xuống để hiển thị sản phẩm mới
+    } else {
+        alert('Bạn chưa có sản phẩm nào trong giỏ hàng');
+    }
+}
+
+
 const cartButton = document.getElementById('cartgh');
 
 cartButton.addEventListener('click', () => {
@@ -199,32 +229,83 @@ const canhan = document.getElementById("canhan");
         noidungcn.addEventListener("click", function(event) {
             event.stopPropagation();
         });
-    /*thay đổi địa chỉ*/
-// Lấy các phần tử từ HTML bằng ID
-const chinhsuaLink = document.getElementById("chinhsua");
-const thaydoiDiv = document.getElementById("moi");
-const hthanhButton = document.getElementById("hthanh");
-const tenField = document.getElementById("htmoi");
-const sdtField = document.getElementById("sdtmoi");
-const dcField = document.getElementById("dcmoi");
+/*------------------lựa chọn địa chỉ--------------*/
+//mở lựa div lựa chọn
+function showlc() {
+    document.getElementById("lcdc").style.display = "block";
+}
+//đóng lựa chọn
+function closelc() {
+    var modal = document.getElementById("lcdc");
+    modal.style.display = "none";
+}
+function dctcn(){
+    closelc();
+    muahang();
+    
+}
+//nhập thông tin mới
+function closedcmoi()
+{
+    var modal = document.getElementById("nhapttmoi");
+    modal.style.display = "none";
+}
+function dcmoi()
+{
+    closelc();
+    document.getElementById("nhapttmoi").style.display = "block";
+}
+//check nhập thông tin
+function checktt() {
+    const htInput = document.getElementById("ht");
+    const adInput = document.getElementById("ad");
+    const sdtInput = document.getElementById("sdt");
+    if (htInput.checkValidity()&&htInput.checkValidity()&&sdtInput.checkValidity() ) {
+      // Chuyển hướng đến trang khác
+     closedcmoi();
+     muahang();
+      return true;
+    }
+    else {
+      alert("Vui lòng điền đủ thông tin.");
+      return false;
+    }
+  }
+  /*------------------lịch sử mua------------*/
+  function damua()
+  {
+    document.getElementById("lsmua").style.display = "block";
+    document.getElementById("closelsmua").style.display = "block";
+  }
+  function closelsmua()
+{
+    var modal = document.getElementById("lsmua");
+    modal.style.display = "none";
+    document.getElementById("closelsmua").style.display = "none";
+}
+function createCartItem2() {
+    const product1 = document.createElement('div');
+    product1.classList.add('cart-item');
 
-// Gán sự kiện click cho liên kết "chỉnh sửa"
-chinhsuaLink.addEventListener("click", function() {
-  // Hiển thị trang thay đổi địa chỉ
-  event.preventDefault(); 
-  thaydoiDiv.style.display = "block";
-  // Ẩn trang cá nhân
-  document.getElementById("tquat").style.display = "none";
-});
+    // Tạo ảnh sản phẩm
+    const img = document.createElement('img');
+    img.src = document.getElementById('anhduoclay').src;
+    product1.appendChild(img);
 
-// Gán sự kiện click cho nút "HOÀN THÀNH"
-hthanhButton.addEventListener("click", function() {
-  // Lấy giá trị từ input fields và gán vào trang cá nhân
-  document.getElementById("ten").textContent = tenField.value;
-  document.getElementById("sdt").textContent = "Số điện thoại: " + sdtField.value;
-  document.getElementById("dc").textContent = "Địa chỉ: " + dcField.value;
-  // Ẩn trang thay đổi địa chỉ
-  thaydoiDiv.style.display = "none";
-  // Hiển thị trang cá nhân
-  document.getElementById("tquat").style.display = "block";
-});
+    // Tạo produtinfo
+    const productInfo = document.createElement('div');
+    productInfo.classList.add('product-info');
+    product1.appendChild(productInfo);
+
+    // Tên sản phẩm
+    const productName = document.createElement('h3');
+    productName.textContent = document.getElementById('tensp').textContent;
+    productInfo.appendChild(productName);
+
+    // Giá sản phẩm
+    const price = document.createElement('p');
+    price.textContent = document.getElementById('d3').textContent;
+    productInfo.appendChild(price);
+
+    return product1;
+}
