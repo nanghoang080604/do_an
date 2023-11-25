@@ -25,7 +25,7 @@
       window.location.href = "./index2.html";
       return true;
     }
-    else if(pwInput.value!=pwagInput.value){
+    else if(pwInput.value!==pwagInput.value){
       alert("Mật khẩu xác nhận sai");
     }else {
       alert("Vui lòng điền đủ thông tin.");
