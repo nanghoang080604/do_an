@@ -1,41 +1,13 @@
+/*---------------trang wed----------*/
+    // Lấy thông tin từ localStorage
+    const hoTen = localStorage.getItem('hoTen');
+    const diaChi = localStorage.getItem('diaChi');
+    const soDienThoai = localStorage.getItem('soDienThoai');
 
-/*lời chào*/
-
-function checkAndSubmit() {
-    const sdtInput = document.getElementById("sdt");
-    const pwInput = document.getElementById("pw");
-
-    if (sdtInput.checkValidity() && pwInput.checkValidity()) {
-      // Chuyển hướng đến trang khác
-      window.location.href = "./index2.html";
-      return true;
-    } else {
-      alert("Vui lòng điền đủ thông tin.");
-      return false;
-    }
-  }
-  function checkAndSubmit2() {
-    const htInput = document.getElementById("ht");
-    const adInput = document.getElementById("ad");
-    const sdtInput = document.getElementById("sdt");
-    const pwInput = document.getElementById("pw");
-    const pwagInput = document.getElementById("pwag");
-
-
-    if (htInput.checkValidity()&&htInput.checkValidity()&&sdtInput.checkValidity() && pwInput.checkValidity()&&pwagInput.checkValidity()&&pwInput.value===pwagInput.value) {
-      // Chuyển hướng đến trang khác
-      window.location.href = "./index2.html";
-      return true;
-    }
-    else if(pwInput.value!=pwagInput.value){
-      alert("Mật khẩu xác nhận sai");
-    }else {
-      alert("Vui lòng điền đủ thông tin.");
-      return false;
-    }
-  }
-
-/*thay đổi địa chỉ*/
+    // Hiển thị thông tin lên trang cá nhân
+    document.getElementById('ten').textContent = hoTen || 'Người Dùng';
+    document.getElementById('sdt').textContent = `Số điện thoại: ${soDienThoai || 'Chưa cập nhật'}`;
+    document.getElementById('dc').textContent = `Địa chỉ: ${diaChi || 'Chưa cập nhật'}`;
 // Lấy các phần tử từ HTML bằng ID
 const chinhsuaLink = document.getElementById("chinhsua");
 const thaydoiDiv = document.getElementById("moi");
@@ -64,4 +36,3 @@ hthanhButton.addEventListener("click", function() {
   // Hiển thị trang cá nhân
   document.getElementById("tquat").style.display = "block";
 });
-
