@@ -17,13 +17,15 @@ const sdtField = document.getElementById("sdtmoi");
 const dcField = document.getElementById("dcmoi");
 
 // Gán sự kiện click cho liên kết "chỉnh sửa"
-chinhsuaLink.addEventListener("click", function() {
+// Gán sự kiện click cho liên kết "chỉnh sửa"
+chinhsuaLink.addEventListener("click", function(event) {
+  event.preventDefault();
   // Hiển thị trang thay đổi địa chỉ
-  event.preventDefault(); 
   thaydoiDiv.style.display = "block";
   // Ẩn trang cá nhân
   document.getElementById("tquat").style.display = "none";
 });
+
 
 // Gán sự kiện click cho nút "HOÀN THÀNH"
 hthanhButton.addEventListener("click", function() {

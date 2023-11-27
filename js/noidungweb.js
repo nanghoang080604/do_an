@@ -286,7 +286,7 @@ searchInput.addEventListener('keyup', function(event) {
         closeSearchOptionsModal(); // Kích hoạt sự kiện click trên nút tìm kiếm
     }
 });
-/*----------------------------HIỆN THỊ NỘI DUNG CÁ NHÂN-----------
+/*----------------------------HIỆN THỊ NỘI DUNG CÁ NHÂN-----------*/
 const canhan = document.getElementById("canhan");
         const noidungcn = document.getElementById("noidungcn");
 
@@ -307,7 +307,7 @@ const canhan = document.getElementById("canhan");
         // Ngăn chặn sự kiện click trên #noidungcn từ lan ra ngoài
         noidungcn.addEventListener("click", function(event) {
             event.stopPropagation();
-        });*/
+        });
         /*----------------GIỎ HÀNG--------------*/
 const addToCartButtons = document.querySelectorAll('.them_vgh');
 const cart = document.getElementById('cart');
@@ -498,28 +498,7 @@ cartButton.addEventListener('click', () => {
         isCartVisible = true; // Đánh dấu rằng giỏ hàng đang hiển thị
     }
 });
-/*----------------------------HIỆN THỊ NỘI DUNG CÁ NHÂN-----------*/
-const canhan = document.getElementById("canhan");
-        const noidungcn = document.getElementById("noidungcn");
 
-        canhan.addEventListener("click", function(event) {
-            event.stopPropagation(); // Ngăn chặn sự kiện click lan ra các phần tử khác
-            if (noidungcn.style.display === "none" || noidungcn.style.display === "") {
-                noidungcn.style.display = "block";
-            } else {
-                noidungcn.style.display = "none";
-            }
-        });
-
-        // Bắt sự kiện click bất kỳ nơi nào trên trang để ẩn #noidungcn khi click ra ngoài
-        document.addEventListener("click", function() {
-            noidungcn.style.display = "none";
-        });
-
-        // Ngăn chặn sự kiện click trên #noidungcn từ lan ra ngoài
-        noidungcn.addEventListener("click", function(event) {
-            event.stopPropagation();
-        });
 /*------------------lựa chọn địa chỉ--------------*/
 //mở lựa div lựa chọn
 function showlc() {
@@ -600,9 +579,4 @@ function createCartItem2() {
 
     return product1;
 }
-/*---------------------------lưu giữ liệu giỏ hàng để các trang html khác có sp---------------*/
-// Lưu dữ liệu giỏ hàng
-localStorage.setItem('cart', JSON.stringify(cartData));
 
-// Đọc dữ liệu giỏ hàng
-const storedCart = JSON.parse(localStorage.getItem('cart'));

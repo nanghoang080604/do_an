@@ -33,8 +33,21 @@
             <a onclick="showAllProducts()">SALE⚡</a>
             <a onclick="showAllProducts()">HOT🔥</a>
             <div >
-                <input type="text" id="searchInput" placeholder="Tìm kiếm theo tên">
-                <button id="searchButton" >&#128269;</button>
+                <input type="text" id="searchInput" placeholder="Tìm kiếm theo tên đồng hồ">
+                <button id="searchButton" onclick="showSearchOptions()">&#128269;</button>
+            </div>
+            <div id="searchOptionsModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeSearchOptionsModal()">&times;</span>
+                    <p>Chọn kiểu tìm kiếm:</p>
+                    <button id="tkt_ten" onclick="showSearchByName()" >Theo tên sản phẩm</button>
+                    <button id="tk_khac" onclick="showSearchByBrandAndPrice()" >Theo tên, hãng và giá</button>
+                    <input type="text" class="hidden"  id="productNameInput" placeholder="Nhập tên sản phẩm" >
+                    <input type="text" class="hidden" id="brandInput"  placeholder="Nhập hãng">
+                    <input type="text" class="hidden" id="minPriceInput"  placeholder="Giá tối thiểu">
+                    <input type="text" class="hidden"  id="maxPriceInput" placeholder="Giá tối đa">
+                    <button class="hidden" id="search2" >&#128269;</button>
+                </div>
             </div>
             <div id="cartgh">
                 <img src="../anh/giohang.jpg">

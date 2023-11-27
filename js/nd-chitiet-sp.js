@@ -100,7 +100,6 @@ function createCartItem() {
     deleteButton.classList.add('delete');
     deleteButton.textContent = 'Xóa';
     product1.appendChild(deleteButton);
-    
 
     return product1; 
 }
@@ -153,7 +152,7 @@ closeCartButton.addEventListener('click', () => {
     overlay.classList.add('hidden');
     isCartVisible = false; // Đánh dấu rằng giỏ hàng đang ẩn
 });
-//mua hàng
+
 //mua hàng
 function muahang() {
     if (cartCount > 0) {

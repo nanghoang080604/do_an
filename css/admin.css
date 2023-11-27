@@ -1,0 +1,20 @@
+#baochum
+{
+    background-color: rgb(254, 252, 252);
+    height: 100em;
+}
+#tieude
+{
+    width: 10%;
+    display: inline-block;
+    margin-left: 20px;
+    margin-top: 50px;
+}
+#tieude p{
+    margin-top: 30px;
+}
+#trove
+{
+    margin-top: 50px;
+    font-size: 10px;
+}
