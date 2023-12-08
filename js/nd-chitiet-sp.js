@@ -30,6 +30,7 @@ let isCartVisible=false;
 let totalAmount = 0;
 addToCartButtons.forEach(button => {
     button.addEventListener('click', () => {
+<<<<<<< HEAD
         alert("Sản phẩm đã được thêm vào giỏ hàng!")
         const productName = document.getElementById('tensp').textContent;
         
@@ -52,6 +53,13 @@ addToCartButtons.forEach(button => {
             deleteCart();
         }
 
+=======
+        cartCount++;
+        updateCartCount();
+        const product1= createCartItem();
+        cartItems.appendChild(product1);
+        deleteCart(); // Gắn sự kiện xóa sản phẩm sau khi sản phẩm được tạo
+>>>>>>> c1f2f89d0daefc6e0237cccee4be11ada2d83552
         carttotal(); // Tính tổng tiền sau khi thêm sản phẩm
     });
 });
@@ -90,7 +98,11 @@ function createCartItem() {
     product1.appendChild(decreaseButton);
 
     const quantityInput = document.createElement('input');
+<<<<<<< HEAD
     quantityInput.type = 'text';
+=======
+    quantityInput.type = 'number';
+>>>>>>> c1f2f89d0daefc6e0237cccee4be11ada2d83552
     quantityInput.value = 1;
     quantityInput.min = 1;
     product1.appendChild(quantityInput);
@@ -117,6 +129,10 @@ function createCartItem() {
     deleteButton.classList.add('delete');
     deleteButton.textContent = 'Xóa';
     product1.appendChild(deleteButton);
+<<<<<<< HEAD
+=======
+    
+>>>>>>> c1f2f89d0daefc6e0237cccee4be11ada2d83552
 
     return product1; 
 }
@@ -169,13 +185,26 @@ closeCartButton.addEventListener('click', () => {
     overlay.classList.add('hidden');
     isCartVisible = false; // Đánh dấu rằng giỏ hàng đang ẩn
 });
+<<<<<<< HEAD
 
+=======
+//mua hàng
+>>>>>>> c1f2f89d0daefc6e0237cccee4be11ada2d83552
 //mua hàng
 function muahang() {
     if (cartCount > 0) {
         const chotButton = document.getElementById('chot');
         const ttongLabel = document.getElementById('ttong');
         
+<<<<<<< HEAD
+=======
+        // Tạo một bản sao của tất cả sản phẩm trong giỏ hàng
+        const cartItemsClone = cartItems.cloneNode(true);
+
+        // Thêm bản sao vào lsmua
+        document.getElementById('lsmua').appendChild(cartItemsClone);
+
+>>>>>>> c1f2f89d0daefc6e0237cccee4be11ada2d83552
         // Xóa tất cả sản phẩm trong giỏ hàng
         cartItems.innerHTML = '';
 
@@ -184,8 +213,12 @@ function muahang() {
         totalAmount = 0;
         updateCartCount();
         ttongLabel.textContent = `${totalAmount.toLocaleString()} ₫`;
+<<<<<<< HEAD
          // Cập nhật tổng tiền sau khi mua hàng
          carttotal();
+=======
+
+>>>>>>> c1f2f89d0daefc6e0237cccee4be11ada2d83552
         // Hiển thị thông báo
         alert('Bạn đã mua thành công sản phẩm');
 
@@ -193,6 +226,7 @@ function muahang() {
         cart.classList.add('hidden');
         overlay.classList.add('hidden');
         isCartVisible = false;
+<<<<<<< HEAD
         // Thêm sản phẩm vào lịch sử mua
         const product = {
             imgSrc: document.getElementById('anhduoclay').src,
@@ -200,6 +234,18 @@ function muahang() {
             price: document.getElementById('d3').textContent
         };
         addProductToHistory(product);
+=======
+
+        // Đóng lịch sử mua
+        document.getElementById("lsmua").style.display = "none";
+
+        // Tạo một phiên bản đơn giản của sản phẩm trong giỏ hàng và thêm vào lịch sử mua
+        const cartItemHistory = createCartItem2();
+        const lsmua = document.getElementById('lsmua');
+        lsmua.innerHTML = '';  // Xóa tất cả nội dung hiện tại trong lsmua
+        lsmua.appendChild(cartItemHistory);
+        lsmua.scrollTop = lsmua.scrollHeight; // Cuộn xuống để hiển thị sản phẩm mới
+>>>>>>> c1f2f89d0daefc6e0237cccee4be11ada2d83552
     } else {
         alert('Bạn chưa có sản phẩm nào trong giỏ hàng');
     }
@@ -291,6 +337,7 @@ function checktt() {
     modal.style.display = "none";
     document.getElementById("closelsmua").style.display = "none";
 }
+<<<<<<< HEAD
 function addProductToHistory(product) {
     document.getElementById("textlsmua").style.display = "none";
     const lsmua = document.getElementById('lsmua');
@@ -340,4 +387,31 @@ function tbao_tkiem()
 {
     window.location.href = "./index2.html";
     alert("Bạn đã được sang trang HTML chính mời bạn tìm kiếm ở đây");
+=======
+function createCartItem2() {
+    const product1 = document.createElement('div');
+    product1.classList.add('cart-item');
+
+    // Tạo ảnh sản phẩm
+    const img = document.createElement('img');
+    img.src = document.getElementById('anhduoclay').src;
+    product1.appendChild(img);
+
+    // Tạo produtinfo
+    const productInfo = document.createElement('div');
+    productInfo.classList.add('product-info');
+    product1.appendChild(productInfo);
+
+    // Tên sản phẩm
+    const productName = document.createElement('h3');
+    productName.textContent = document.getElementById('tensp').textContent;
+    productInfo.appendChild(productName);
+
+    // Giá sản phẩm
+    const price = document.createElement('p');
+    price.textContent = document.getElementById('d3').textContent;
+    productInfo.appendChild(price);
+
+    return product1;
+>>>>>>> c1f2f89d0daefc6e0237cccee4be11ada2d83552
 }

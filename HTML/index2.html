@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -105,16 +106,114 @@
             </div>
             <div class="tpctrang">
                 <a href="#" onclick="mausotrang(this)">3</a>
+=======
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HVH WATCH</title>
+    <link rel="stylesheet" type="text/css" href="../css/đinhanggd.css" />
+    <link rel="stylesheet" href="../css/dinhdang.css">
+    <link rel="stylesheet" href="../css/gdchinh.css">
+    <link rel="icon" type="image/x-icon" href="../anh/thuonghieu.jpg">
+</head>
+
+<body>
+    <header class="tt1">
+        <div id="th">
+            <img src="../anh/thuonghieu.jpg" alt="ICON TIỆM">
+        </div>
+        <a onclick="showAllProducts()">TRANG CHỦ</a>
+        <div class="t01">
+            <a onclick="showAllProducts()">THƯƠNG HIỆU</a>
+            <div class="t11">
+                <table>
+                    <tr>
+                        <a class="tth" onclick="showProductsByBrand('Casio')">CASIO</a>
+                        <a class="tth" onclick="showProductsByBrand('Orient')">ORIENT</a>
+                        <a class="tth" onclick="showProductsByBrand('Tissot')">TISSOT</a>
+                        <a class="tth" onclick="showProductsByBrand('Saga')">SAGA</a>
+                    </tr>
+                </table>
             </div>
+        </div>
+        <a id="nam" onclick="showProducts('nam')">NAM</a>
+        <a id="nu" onclick="showProducts('nu')">NỮ</a>
+        <a onclick="showAllProducts()">SALE⚡</a>
+        <a onclick="showAllProducts()">HOT🔥</a>
+        <div>
+            <input type="text" id="searchInput" placeholder="Tìm kiếm theo tên">
+            <button id="searchButton">&#128269;</button>
+        </div>
+        <div id="cartgh">
+            <img src="../anh/giohang.jpg">
+            <label id="cartCount">0</label>
+        </div>
+        <div class="bccanhan">
+            <img id="canhan" src="../anh/anhchu.jpg">
+            <div id="noidungcn">
+                <a class="ndht" href="trangcanhan.html">»Tài Khoản</a>
+                <a class="ndht" id="lichsumua" onclick="damua()">»Đã mua</a>
+                <a id="dx" href="./giaodien.html">Đăng Xuất</a>
+            </div>
+        </div>
+    </header>
+    <p id="closelsmua" onclick="closelsmua()">&times;</p>
+    <div id="lsmua" class="hidden">
+        <p id="textlsmua">(Bạn chưa mua sản phẩm nào )</p>
+    </div>
+
+    <div id="overlay" class="hidden">
+        <div id="cart" class="cart">
+            <div id="cartItems">
+            </div>
+            <div id="cartControls">
+                <label id="ttien">Tổng tiền:</label>
+                <span id="ttong">0 ₫</span>
+                <button id="chot">MUA NGAY</button>
+                <button id="closeCart">Đóng</button>
+>>>>>>> c1f2f89d0daefc6e0237cccee4be11ada2d83552
+            </div>
+        </div>
+    </div>
+    <div id="thongbao">
+        <img src="../anh/aem-banner-top-g-1920-816.webp">
+    </div>
+    <div id="noResultsMessage">
+        Không có sản phẩm bạn tìm kiếm!
+    </div>
+    <div id="product-container"></div>
+    <div id="chuyentrang">
+        <div id="dauct">
             <div class="tpctrang">
-                <a href="#">></a>
+                <a href="#">&lt;</a>
             </div>
         
         </div>
+        <div class="tpctrang">
+            <a href="#">1</a>
+        </div>
+        <div class="tpctrang">
+            <a href="#">2</a>
+        </div>
+        <div class="tpctrang">
+            <a href="#">3</a>
+        </div>
+        <div class="tpctrang">
+            <a href="#">></a>
+        </div>
+
     </div>
+<<<<<<< HEAD
         <div id="ld">
             <div id="lido">
                 <img src="../anh/lido1.jpg">
+=======
+    </div>
+    <div id="ld">
+        <div id="lido">
+            <img src="../anh/lido1.jpg">
+>>>>>>> c1f2f89d0daefc6e0237cccee4be11ada2d83552
         </div>
         <div class="cuoi">
             <div id="cuoi1">
@@ -122,25 +221,39 @@
             </div>
             <div id="cuoi2">
                 <p>HƯỚNG DẪN</p>
-                <p ><a  href="https://donghohaitrieu.com/lien-he">Thông tin liên hệ</a></p>
-                <p><a  href="https://donghohaitrieu.com/chinh-sach-bao-hanh-cua-dong-ho-hai-trieu">Chính sách bảo hành</a></p>
+                <p><a href="https://donghohaitrieu.com/lien-he">Thông tin liên hệ</a></p>
+                <p><a href="https://donghohaitrieu.com/chinh-sach-bao-hanh-cua-dong-ho-hai-trieu">Chính sách bảo
+                        hành</a></p>
                 <p><a href="https://donghohaitrieu.com/thac-mac-gop-y">Hỏi đáp-góp ý</a></p>
-                <p><a href="https://donghohaitrieu.com/chinh-sach-doi-hang-tai-dong-ho-hai-trieu">Chính sách đổi trả</a></p>
+                <p><a href="https://donghohaitrieu.com/chinh-sach-doi-hang-tai-dong-ho-hai-trieu">Chính sách đổi trả</a>
+                </p>
             </div>
             <div id="cuoi3">
                 <p>CHỨNG NHẬN</p>
-                <a href="https://donghohaitrieu.com/tin-tuc/hai-trieu/chung-nhan-dai-ly-chinh-hang-cac-giai-thuong-dong-ho-hai-trieu-da-dat-duoc.html"><img src="../anh/baohanh.jpg"></p></a>
-                <a href="https://donghohaitrieu.com/dich-vu-sua-chua-dong-ho-chinh-hang"><img src="../anh/chungnhan.jpg"></p></a>
+                <a
+                    href="https://donghohaitrieu.com/tin-tuc/hai-trieu/chung-nhan-dai-ly-chinh-hang-cac-giai-thuong-dong-ho-hai-trieu-da-dat-duoc.html"><img
+                        src="../anh/baohanh.jpg"></p></a>
+                <a href="https://donghohaitrieu.com/dich-vu-sua-chua-dong-ho-chinh-hang"><img
+                        src="../anh/chungnhan.jpg"></p></a>
             </div>
             <div id="cuoi4">
-               <p >THEO DÕI THÊM</p>
-                <a href="https://www.facebook.com/profile.php?id=100040908120647&mibextid=LQQJ4d"><img class="mxh" src="../anh/fb.jpg"></a>
-                <a href="https://www.facebook.com/tranduyhoang10082004?mibextid=LQQJ4d"><img class="mxh" src="../anh/tiktiok.jpg"></a>
-                <a href="https://www.facebook.com/nangne0806?mibextid=LQQJ4d"><img class="mxh" src="../anh/inta.jpg"></a>
+                <p>THEO DÕI THÊM</p>
+                <a href="https://www.facebook.com/profile.php?id=100040908120647&mibextid=LQQJ4d"><img class="mxh"
+                        src="../anh/fb.jpg"></a>
+                <a href="https://www.facebook.com/tranduyhoang10082004?mibextid=LQQJ4d"><img class="mxh"
+                        src="../anh/tiktiok.jpg"></a>
+                <a href="https://www.facebook.com/nangne0806?mibextid=LQQJ4d"><img class="mxh"
+                        src="../anh/inta.jpg"></a>
             </div>
         </div>
         <script type="text/javascript" src="../js/js2.js"></script>
         <script type="text/javascript" src="../js/noidungweb.js"></script>
+<<<<<<< HEAD
     </body>
     </body>
+=======
+</body>
+</body>
+
+>>>>>>> c1f2f89d0daefc6e0237cccee4be11ada2d83552
 </html>

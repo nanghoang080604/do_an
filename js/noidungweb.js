@@ -113,6 +113,7 @@ function showProductsByBrand(brand) {
         }
     });
 }
+<<<<<<< HEAD
     function mausotrang(element) {
         // Bỏ chọn tất cả các số trang khác
         var trangElements = document.querySelectorAll('.tpctrang a');
@@ -124,6 +125,8 @@ function showProductsByBrand(brand) {
         element.style.color = 'orange'; // Màu cam
     }
 
+=======
+>>>>>>> c1f2f89d0daefc6e0237cccee4be11ada2d83552
 /*---------------hiện thị lựa chọn tìm kiếm------------*/
 function showSearchOptions() {
     // Hiển thị modal khi click vào nút tìm kiếm
@@ -131,6 +134,7 @@ function showSearchOptions() {
 }
 
 function closeSearchOptionsModal() {
+<<<<<<< HEAD
     var modal = document.getElementById("searchOptionsModal");
     document.getElementById("tkt_ten").classList.remove("hidden");
     document.getElementById("tk_khac").classList.remove("hidden");
@@ -143,6 +147,12 @@ function closeSearchOptionsModal() {
 }
 
 
+=======
+    // Ẩn modal khi click vào nút đóng hoặc bên ngoài modal
+    document.getElementById('searchOptionsModal').style.display = 'none';
+}
+
+>>>>>>> c1f2f89d0daefc6e0237cccee4be11ada2d83552
 function showSearchOptionsModal() {
     var modal = document.getElementById("searchOptionsModal");
     modal.style.display = "block";
@@ -163,7 +173,11 @@ function showSearchByBrandAndPrice() {
     document.getElementById("tkt_ten").classList.add("hidden");
     document.getElementById("tk_khac").classList.add("hidden");
     document.getElementById("productNameInput").classList.remove("hidden");
+<<<<<<< HEAD
     document.getElementById("brandSelect").classList.remove("hidden");
+=======
+    document.getElementById("brandInput").classList.remove("hidden");
+>>>>>>> c1f2f89d0daefc6e0237cccee4be11ada2d83552
     document.getElementById("minPriceInput").classList.remove("hidden");
     document.getElementById("maxPriceInput").classList.remove("hidden");
     document.getElementById("search2").classList.remove("hidden");
@@ -224,8 +238,12 @@ searchButton.addEventListener('click', function() {
 // Hàm tìm kiếm sản phẩm theo hãng, tên và giá
 function searchProducts() {
     // Lấy giá trị từ các trường nhập
+<<<<<<< HEAD
     const brandSelect = document.getElementById('brandSelect');
     const brand = brandSelect.options[brandSelect.selectedIndex].value.toLowerCase();
+=======
+    const brand = document.getElementById('brandInput').value.toLowerCase();
+>>>>>>> c1f2f89d0daefc6e0237cccee4be11ada2d83552
     const name = document.getElementById('productNameInput').value.toLowerCase();
     const minPrice = parseFloat(document.getElementById('minPriceInput').value.replace(/\D+/g, '')) || 0;
     const maxPrice = parseFloat(document.getElementById('maxPriceInput').value.replace(/\D+/g, '')) || Infinity;
@@ -234,7 +252,11 @@ function searchProducts() {
     const filteredProducts = products.filter(product => {
         const lowerCaseProductBrand = product.brand.toLowerCase();
         const lowerCaseProductName = product.name.toLowerCase();
+<<<<<<< HEAD
         const productPrice = parseFloat(product.price.replace(/\D+/g, ''));
+=======
+        const productPrice = parseFloat(product.price.replace(/\D+/g, '')); // Chuyển giá thành số
+>>>>>>> c1f2f89d0daefc6e0237cccee4be11ada2d83552
 
         return lowerCaseProductBrand.includes(brand)
             && lowerCaseProductName.includes(name)
@@ -242,7 +264,10 @@ function searchProducts() {
             && (!maxPrice || productPrice <= maxPrice);
     });
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> c1f2f89d0daefc6e0237cccee4be11ada2d83552
     // Hiển thị sản phẩm đã lọc
     displayFilteredProducts(filteredProducts);
 
@@ -283,11 +308,17 @@ function displayFilteredProducts(filteredProducts) {
 }
 const searchButton = document.getElementById('search2');
 searchButton.addEventListener('click', function() {
+<<<<<<< HEAD
     
     // Gọi hàm searchProducts() khi nút được click
     const filteredProducts = searchProducts();
     closeSearchOptionsModal();
     alert("Bạn hãy kéo xuống để thay được kết qua tìm kiếm nhé!");
+=======
+    // Gọi hàm searchProducts() khi nút được click
+    const filteredProducts = searchProducts();
+    closeSearchOptionsModal();
+>>>>>>> c1f2f89d0daefc6e0237cccee4be11ada2d83552
     // Kiểm tra xem có sản phẩm nào được tìm thấy không
     if (filteredProducts.length === 0) {
         noResultsMessage.style.display = 'block'; // Hiển thị thông báo
@@ -305,12 +336,41 @@ if (foundProducts) {
 // Nếu người dùng nhấn Enter trong trường nhập văn bản, cũng thực hiện tìm kiếm
 searchInput.addEventListener('keyup', function(event) {
     if (event.key === 'Enter') {
+<<<<<<< HEAD
         alert("Bạn hãy kéo xuống để thay được kết qua tìm kiếm nhé!");
+=======
+>>>>>>> c1f2f89d0daefc6e0237cccee4be11ada2d83552
         searchButton.click();
         closeSearchOptionsModal(); // Kích hoạt sự kiện click trên nút tìm kiếm
     }
 });
+<<<<<<< HEAD
 /*----------------GIỎ HÀNG--------------*/
+=======
+/*----------------------------HIỆN THỊ NỘI DUNG CÁ NHÂN-----------
+const canhan = document.getElementById("canhan");
+        const noidungcn = document.getElementById("noidungcn");
+
+        canhan.addEventListener("click", function(event) {
+            event.stopPropagation(); // Ngăn chặn sự kiện click lan ra các phần tử khác
+            if (noidungcn.style.display === "none" || noidungcn.style.display === "") {
+                noidungcn.style.display = "block";
+            } else {
+                noidungcn.style.display = "none";
+            }
+        });
+
+        // Bắt sự kiện click bất kỳ nơi nào trên trang để ẩn #noidungcn khi click ra ngoài
+        document.addEventListener("click", function() {
+            noidungcn.style.display = "none";
+        });
+
+        // Ngăn chặn sự kiện click trên #noidungcn từ lan ra ngoài
+        noidungcn.addEventListener("click", function(event) {
+            event.stopPropagation();
+        });*/
+        /*----------------GIỎ HÀNG--------------*/
+>>>>>>> c1f2f89d0daefc6e0237cccee4be11ada2d83552
 const addToCartButtons = document.querySelectorAll('.them_vgh');
 const cart = document.getElementById('cart');
 const cartItems = document.getElementById('cartItems');
@@ -322,6 +382,7 @@ let isCartVisible=false;
 let totalAmount = 0;
 addToCartButtons.forEach(button => {
     button.addEventListener('click', () => {
+<<<<<<< HEAD
         alert("Sản phẩm đã được thêm vào giỏ hàng!")
         const productName = document.getElementById('tensp').textContent;
         
@@ -344,6 +405,13 @@ addToCartButtons.forEach(button => {
             deleteCart();
         }
 
+=======
+        cartCount++;
+        updateCartCount();
+        const product1= createCartItem();
+        cartItems.appendChild(product1);
+        deleteCart(); // Gắn sự kiện xóa sản phẩm sau khi sản phẩm được tạo
+>>>>>>> c1f2f89d0daefc6e0237cccee4be11ada2d83552
         carttotal(); // Tính tổng tiền sau khi thêm sản phẩm
     });
 });
@@ -382,7 +450,11 @@ function createCartItem() {
     product1.appendChild(decreaseButton);
 
     const quantityInput = document.createElement('input');
+<<<<<<< HEAD
     quantityInput.type = 'text';
+=======
+    quantityInput.type = 'number';
+>>>>>>> c1f2f89d0daefc6e0237cccee4be11ada2d83552
     quantityInput.value = 1;
     quantityInput.min = 1;
     product1.appendChild(quantityInput);
@@ -409,6 +481,10 @@ function createCartItem() {
     deleteButton.classList.add('delete');
     deleteButton.textContent = 'Xóa';
     product1.appendChild(deleteButton);
+<<<<<<< HEAD
+=======
+    
+>>>>>>> c1f2f89d0daefc6e0237cccee4be11ada2d83552
 
     return product1; 
 }
@@ -461,13 +537,27 @@ closeCartButton.addEventListener('click', () => {
     overlay.classList.add('hidden');
     isCartVisible = false; // Đánh dấu rằng giỏ hàng đang ẩn
 });
+<<<<<<< HEAD
 
+=======
+//mua hàng
+>>>>>>> c1f2f89d0daefc6e0237cccee4be11ada2d83552
 //mua hàng
 function muahang() {
     if (cartCount > 0) {
         const chotButton = document.getElementById('chot');
         const ttongLabel = document.getElementById('ttong');
+<<<<<<< HEAD
         
+=======
+
+        // Tạo một bản sao của tất cả sản phẩm trong giỏ hàng
+        const cartItemsClone = cartItems.cloneNode(true);
+
+        // Thêm bản sao vào lsmua
+        document.getElementById('lsmua').appendChild(cartItemsClone);
+
+>>>>>>> c1f2f89d0daefc6e0237cccee4be11ada2d83552
         // Xóa tất cả sản phẩm trong giỏ hàng
         cartItems.innerHTML = '';
 
@@ -476,8 +566,12 @@ function muahang() {
         totalAmount = 0;
         updateCartCount();
         ttongLabel.textContent = `${totalAmount.toLocaleString()} ₫`;
+<<<<<<< HEAD
          // Cập nhật tổng tiền sau khi mua hàng
          carttotal();
+=======
+
+>>>>>>> c1f2f89d0daefc6e0237cccee4be11ada2d83552
         // Hiển thị thông báo
         alert('Bạn đã mua thành công sản phẩm');
 
@@ -485,6 +579,7 @@ function muahang() {
         cart.classList.add('hidden');
         overlay.classList.add('hidden');
         isCartVisible = false;
+<<<<<<< HEAD
         // Thêm sản phẩm vào lịch sử mua
         const product = {
             imgSrc: document.getElementById('anhduoclay').src,
@@ -492,6 +587,19 @@ function muahang() {
             price: document.getElementById('d3').textContent
         };
         addProductToHistory(product);
+=======
+
+        // Đóng lịch sử mua
+        document.getElementById("lsmua").style.display = "none";
+
+        // Tạo một phiên bản đơn giản của sản phẩm trong giỏ hàng và thêm vào lịch sử mua
+        const cartItemHistory = createCartItem2();
+        const lsmua = document.getElementById('lsmua');
+        lsmua.innerHTML = '';  // Xóa tất cả nội dung hiện tại trong lsmua
+        lsmua.appendChild(cartItemHistory);
+        lsmua.scrollTop = lsmua.scrollHeight; // Cuộn xuống để hiển thị sản phẩm mới
+
+>>>>>>> c1f2f89d0daefc6e0237cccee4be11ada2d83552
     } else {
         alert('Bạn chưa có sản phẩm nào trong giỏ hàng');
     }
@@ -583,6 +691,7 @@ function checktt() {
     modal.style.display = "none";
     document.getElementById("closelsmua").style.display = "none";
 }
+<<<<<<< HEAD
 function addProductToHistory(product) {
     document.getElementById("textlsmua").style.display = "none";
     const lsmua = document.getElementById('lsmua');
@@ -626,3 +735,37 @@ function tbao_tkiem()
     alert("Bạn đã được sang trang HTML chính mời bạn tìm kiếm ở đây");
 }
 
+=======
+function createCartItem2() {
+    const product1 = document.createElement('div');
+    product1.classList.add('cart-item');
+
+    // Tạo ảnh sản phẩm
+    const img = document.createElement('img');
+    img.src = document.getElementById('anhduoclay').src;
+    product1.appendChild(img);
+
+    // Tạo produtinfo
+    const productInfo = document.createElement('div');
+    productInfo.classList.add('product-info');
+    product1.appendChild(productInfo);
+
+    // Tên sản phẩm
+    const productName = document.createElement('h3');
+    productName.textContent = document.getElementById('tensp').textContent;
+    productInfo.appendChild(productName);
+
+    // Giá sản phẩm
+    const price = document.createElement('p');
+    price.textContent = document.getElementById('d3').textContent;
+    productInfo.appendChild(price);
+
+    return product1;
+}
+/*---------------------------lưu giữ liệu giỏ hàng để các trang html khác có sp---------------*/
+// Lưu dữ liệu giỏ hàng
+localStorage.setItem('cart', JSON.stringify(cartData));
+
+// Đọc dữ liệu giỏ hàng
+const storedCart = JSON.parse(localStorage.getItem('cart'));
+>>>>>>> c1f2f89d0daefc6e0237cccee4be11ada2d83552

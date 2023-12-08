@@ -1,13 +1,41 @@
-/*---------------trang wed----------*/
-    // Lấy thông tin từ localStorage
-    const hoTen = localStorage.getItem('hoTen');
-    const diaChi = localStorage.getItem('diaChi');
-    const soDienThoai = localStorage.getItem('soDienThoai');
 
-    // Hiển thị thông tin lên trang cá nhân
-    document.getElementById('ten').textContent = hoTen || 'Người Dùng';
-    document.getElementById('sdt').textContent = `Số điện thoại: ${soDienThoai || 'Chưa cập nhật'}`;
-    document.getElementById('dc').textContent = `Địa chỉ: ${diaChi || 'Chưa cập nhật'}`;
+/*lời chào*/
+
+function checkAndSubmit() {
+    const sdtInput = document.getElementById("sdt");
+    const pwInput = document.getElementById("pw");
+
+    if (sdtInput.checkValidity() && pwInput.checkValidity()) {
+      // Chuyển hướng đến trang khác
+      window.location.href = "./index2.html";
+      return true;
+    } else {
+      alert("Vui lòng điền đủ thông tin.");
+      return false;
+    }
+  }
+  function checkAndSubmit2() {
+    const htInput = document.getElementById("ht");
+    const adInput = document.getElementById("ad");
+    const sdtInput = document.getElementById("sdt");
+    const pwInput = document.getElementById("pw");
+    const pwagInput = document.getElementById("pwag");
+
+
+    if (htInput.checkValidity()&&htInput.checkValidity()&&sdtInput.checkValidity() && pwInput.checkValidity()&&pwagInput.checkValidity()&&pwInput.value===pwagInput.value) {
+      // Chuyển hướng đến trang khác
+      window.location.href = "./index2.html";
+      return true;
+    }
+    else if(pwInput.value!=pwagInput.value){
+      alert("Mật khẩu xác nhận sai");
+    }else {
+      alert("Vui lòng điền đủ thông tin.");
+      return false;
+    }
+  }
+
+/*thay đổi địa chỉ*/
 // Lấy các phần tử từ HTML bằng ID
 const chinhsuaLink = document.getElementById("chinhsua");
 const thaydoiDiv = document.getElementById("moi");
@@ -17,25 +45,14 @@ const sdtField = document.getElementById("sdtmoi");
 const dcField = document.getElementById("dcmoi");
 
 // Gán sự kiện click cho liên kết "chỉnh sửa"
-<<<<<<< HEAD
-// Gán sự kiện click cho liên kết "chỉnh sửa"
-chinhsuaLink.addEventListener("click", function(event) {
-  event.preventDefault();
-  // Hiển thị trang thay đổi địa chỉ
-=======
 chinhsuaLink.addEventListener("click", function() {
   // Hiển thị trang thay đổi địa chỉ
   event.preventDefault(); 
->>>>>>> c1f2f89d0daefc6e0237cccee4be11ada2d83552
   thaydoiDiv.style.display = "block";
   // Ẩn trang cá nhân
   document.getElementById("tquat").style.display = "none";
 });
 
-<<<<<<< HEAD
-
-=======
->>>>>>> c1f2f89d0daefc6e0237cccee4be11ada2d83552
 // Gán sự kiện click cho nút "HOÀN THÀNH"
 hthanhButton.addEventListener("click", function() {
   // Lấy giá trị từ input fields và gán vào trang cá nhân
@@ -47,3 +64,4 @@ hthanhButton.addEventListener("click", function() {
   // Hiển thị trang cá nhân
   document.getElementById("tquat").style.display = "block";
 });
+
