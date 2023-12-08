@@ -79,7 +79,6 @@ const products =[
         brand:'Orient',
         url: './gd2.html'
      },
-<<<<<<< HEAD
      { 
         img:'../anh/T006.407.16.033.00-1.jpg',
         name:'Tissot Le Locle T006.407.16.033.00',
@@ -96,8 +95,6 @@ const products =[
         brand:'Saga',
         url: './gd2.html'
     },
-=======
->>>>>>> c1f2f89d0daefc6e0237cccee4be11ada2d83552
     // Thêm các mục sản phẩm khác ở đây
 ];
 

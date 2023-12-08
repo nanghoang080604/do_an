@@ -17,25 +17,16 @@ const sdtField = document.getElementById("sdtmoi");
 const dcField = document.getElementById("dcmoi");
 
 // Gán sự kiện click cho liên kết "chỉnh sửa"
-<<<<<<< HEAD
 // Gán sự kiện click cho liên kết "chỉnh sửa"
 chinhsuaLink.addEventListener("click", function(event) {
   event.preventDefault();
   // Hiển thị trang thay đổi địa chỉ
-=======
-chinhsuaLink.addEventListener("click", function() {
-  // Hiển thị trang thay đổi địa chỉ
-  event.preventDefault(); 
->>>>>>> c1f2f89d0daefc6e0237cccee4be11ada2d83552
   thaydoiDiv.style.display = "block";
   // Ẩn trang cá nhân
   document.getElementById("tquat").style.display = "none";
 });
 
-<<<<<<< HEAD
 
-=======
->>>>>>> c1f2f89d0daefc6e0237cccee4be11ada2d83552
 // Gán sự kiện click cho nút "HOÀN THÀNH"
 hthanhButton.addEventListener("click", function() {
   // Lấy giá trị từ input fields và gán vào trang cá nhân
