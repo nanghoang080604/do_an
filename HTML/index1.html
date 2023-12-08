@@ -43,7 +43,12 @@
                     <button id="tkt_ten" onclick="showSearchByName()" >Theo tên sản phẩm</button>
                     <button id="tk_khac" onclick="showSearchByBrandAndPrice()" >Theo tên, hãng và giá</button>
                     <input type="text" class="hidden"  id="productNameInput" placeholder="Nhập tên sản phẩm" >
-                    <input type="text" class="hidden" id="brandInput"  placeholder="Nhập hãng">
+                    <select id="brandSelect" class="hidden">
+                        <option value="casio">Casio</option>
+                        <option value="orient">Orient</option>
+                        <option value="tissot">Tissot</option>
+                        <option value="saga">Saga</option>
+                    </select>
                     <input type="text" class="hidden" id="minPriceInput"  placeholder="Giá tối thiểu">
                     <input type="text" class="hidden"  id="maxPriceInput" placeholder="Giá tối đa">
                     <button class="hidden" id="search2" >&#128269;</button>
@@ -65,13 +70,13 @@
                     </div>
                 </div>
                 <div class="tpctrang">
-                    <a  href="#">1</a>
+                    <a  href="#" onclick="mausotrang(this) " style="color: orange;">1</a>
                 </div>
                 <div class="tpctrang">
-                    <a href="#">2</a>
+                    <a href="#" onclick="mausotrang(this)">2</a>
                 </div>
                 <div class="tpctrang">
-                    <a href="#">3</a>
+                    <a href="#" onclick="mausotrang(this)">3</a>
                 </div>
                 <div class="tpctrang">
                     <a href="#">></a>

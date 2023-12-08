@@ -79,6 +79,22 @@ const products =[
         brand:'Orient',
         url: './gd2.html'
      },
+     { 
+        img:'../anh/T006.407.16.033.00-1.jpg',
+        name:'Tissot Le Locle T006.407.16.033.00',
+        type:'nam',
+        price:'17.500.000',
+        brand:'Tissot',
+        url: './gh1.html'
+     },
+     { 
+        img:'../anh/53458-SVMWBK-2.jpg',
+        name:'Saga 53458-SVMWBK-2',
+        type:'nu',
+        price:'8.080.000',
+        brand:'Saga',
+        url: './gd2.html'
+    },
     // Thêm các mục sản phẩm khác ở đây
 ];
 

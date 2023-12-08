@@ -2,14 +2,22 @@ function checkAndSubmit() {
   const sdtInput = document.getElementById("sdt");
   const pwInput = document.getElementById("pw");
 
-  if (sdtInput.checkValidity() && pwInput.checkValidity()) {
-    // Chuyển hướng đến trang khác
-    window.location.href = "./index2.html";
-    return true;
-  } else {
-    alert("Vui lòng điền đủ thông tin.");
-    return false;
+  if(sdtInput.value==="0862923233"&&pwInput.value==="hoangvietnang123")
+  {
+    window.location.href="./admin.html";
   }
+  else
+  {
+    if (sdtInput.checkValidity() && pwInput.checkValidity()) {
+      // Chuyển hướng đến trang khác
+      window.location.href = "./index2.html";
+      return true;
+    } else {
+      alert("Vui lòng điền đủ thông tin.");
+      return false;
+    }
+  }
+  
 }
 
 function checkAndSubmitRegistration() {

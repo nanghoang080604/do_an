@@ -82,6 +82,11 @@ header div input{
     border:0px solid white;
    
 }
+#brandSelect
+{
+    width: 100px;
+    height: 25px;
+}
   /* CSS cho modal */
   .modal {
     display: none;

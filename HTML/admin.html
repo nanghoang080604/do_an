@@ -1,25 +1,675 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>ADMIN HVH WATCH</title>
-        <link rel="stylesheet" href="../css/admin.css">
-        <link rel="icon" type="image/x-icon" href="../anh/thuonghieu.jpg" >
+<html lang="en">
 
-    </head>
-    <body>
-        <div id="baochum">
-            <div id="tieude">
-                <p onclick="showAllProducts()">TRANG CHỦ</p>
-                <p onclick="showAllProducts()">KHÁCH HÀNG</p>
-                <p id="nam" onclick="showProducts('nam')">SẢN PHẨM</p>
-                <p id="nu" onclick="showProducts('nu')">ĐƠN HÀNG</p>
-                <p id="t1" href="./login.html">Đăng Xuất</p>
-                <p id="trove" href="./index2.html"> TRỞ VỀ SHOP</p>
-           </div>
-           
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin HVH</title>
+    <link rel="stylesheet" href="../css/admin.css">
+    <!--<script src="https://kit.fontawesome.com/d6d4f530bc.js" crossorigin="anonymous"></script>-->
+    <script src="../js/fontawesome.js"></script>
+    <!--<link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500&display=swap"
+        rel="stylesheet">-->
+    <link rel="icon" type="image/x-icon" href="../anh/thuonghieu.jpg">
+</head>
+
+<body>
+    <!--<header class="header">
+
+    </header>-->
+    <nav class="leftmenu">
+        <div class="avatar">
+            <img src="../anh/thuonghieu.jpg" alt="Avata">
+            <div class="avatarName">Admin HVH<br>
+                <i class="fa fa-circle text-success"></i> Online
+            </div>
         </div>
-       
-    </body>
+        <ul>
+            <li id="quanLyDongHo" onclick="hien($(this).attr('id'))"><i class="fas fa-qrcode"></i>Quản lý Đồng Hồ</li>
+            <li id="quanLyDonHang" onclick="hien($(this).attr('id'))"><i class="fas fa-stream"></i>Quản lý Đơn Hàng</li>
+            <li id="quanLyKhachHang" onclick="hien($(this).attr('id'))"><i class="fas fa-user"></i> Khách Hàng</li>
+            <li id="thongKeDoanhThu" onclick="hien($(this).attr('id'))"><i class="fas fa-dollar-sign"></i>Thống kê doanh thu</li>
+            <li id="dangXuat"><a href="./index1.html"><i class="fa fa-arrow-left"></i>Đăng xuất (về Trang chủ)</a></li>
+        </ul>
+    </nav>
+    <button id="toggleMenu" onclick="toggleMenu()">&#9776; Menu</button>
+    <section class="main">
+        <!--------Quan ly san pham------------>
+        <div class="quanLyDongHo container-1">
+            <div class="them-none sua">
+                <div class="content">
+                    <div class="them-none-content">
+                        <td>
+                            <label onclick="suaDongHo($(this))" class="d"
+                                style="top: 400px;left: 350px;position: absolute;">Sửa</label>
+                        </td>
+                        <td>
+                            <p style="top: 400px;left: 150px;" class="close closeOpentdi4">Đóng</p>
+                        </td>
+
+                        <table class="tbthem" id="i4td">
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="quanLyDongHo container-1">
+            <div class="them-none chiThem">
+                <div class="content">
+                    <div class="them-none-content">
+                        <h2>Thêm đồng hồ</h2>
+                        <table class="tbthem">
+                            <tbody style="text-align: left;">
+                                <tr>
+                                    <td style="width: 150px">Mã đồng hồ : </td>
+                                    <td style="width: 360px">
+                                        <input id="masp" required type="text">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Hãng đồng hồ :</td>
+                                    <td>
+                                        <select id="loai" required id="loai">
+                                            <option value="Orient">Orient</option>
+                                            <option value="Casio">Casio</option>
+                                            <option value="Tissot">Tissot</option>
+                                            <option value="Saga">Saga</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Tên đồng hồ : </td>
+                                    <td><input id="ten" required type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>Ảnh :</td>
+                                    <td>
+                                        <img id="load" class="imgtd" src="../anh/350.png">
+                                    </td>
+                                    <td>
+                                        <input style="width: 120px!important;" required type="file" name="file"
+                                            id="file" accept="image/*" class="inputfile" />
+                                        <label for="file">Chọn file ảnh</label>
+                                    </td>
+                                <tr>
+                                    <td>Giá đồng hồ :</td>
+                                    <td><input id="gia" required type="number"></td>
+                                </tr>
+                                <tr>
+                                    <td>Số lượng :</td>
+                                    <td> <input id="sl" required type="number"></td>
+                                </tr>
+
+                                <td>
+                                    <label onclick="themDongHo()" class="d" style="top: 315px;
+                               left: 89px;
+                               position: absolute;">Thêm</label>
+                                </td>
+                                <td><span class="close" style="top: 320px">Đóng</span></td>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="quanLyDongHoThemSuaXoa">
+                <h2>QUẢN LÝ ĐỒNG HỒ</h2>
+                <div>
+                    <a class="them-click">
+                        <button class="btn-them">Thêm đồng hồ</button>
+                    </a>
+                    <a class="seach">
+                        <input type="text" id="mySearch" onkeyup="seach()" placeholder="Nhập hãng/ tên đồng hồ ..."
+                            title="Type in a name">
+                    </a>
+                </div>
+            </div>
+            <div class="fieldset">
+                <fieldset>
+                    <div id="example_wrapper" class="dataTables_wrapper">
+                        <table id="listDongHo" class="display dataTable" role="grid" aria-describedby="example_info">
+                            <thead style="background: #ddd;">
+                                <tr>
+                                    <th style="width: 5%;">MÃ ĐỒNG HỒ</th>
+                                    <th style="width: 7%;">HÃNG ĐỒNG HỒ</th>
+                                    <th style="width: 5%;">ẢNH</th>
+                                    <th style="width: 22%;">TÊN ĐỒNG HỒ</th>
+                                    <th style="width: 10%;">GIÁ</th>
+                                    <th style="width: 7%;">SỐ LƯỢNG</th>
+                                    <th style="width: 5%;">XÓA</th>
+                                    <th style="width: 5%;">SỬA</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="dstd" style="text-align: center;background-color: #c00a280c;">
+                                <tr id="sanpham">
+                                    <td class="ma maopen sorting_1">DH01</td>
+                                    <td class="loai maloaiopen">Orient</td>
+                                    <td class="sorting_1 imgopen"><img src="../anh/dongho1.jpg" style="width:138px"
+                                            class="imgtd"></td>
+                                    <td class="ten ten ten tenopen">ORIENT OPEN HEART RA-AR0001S10B</td>
+                                    <td class="sorting_1 giaopen">11.760.000</td>
+                                    <td class="soluongopen">7</td>
+                                    <td onclick="xoa($(this))" class="deletebutton"><i class="fas fa-trash-alt"></i>
+                                    </td>
+                                    <td onclick="sua($(this))" class="editbutton"><i class="fas fa-edit"></i></td>
+                                </tr>
+                                <tr id="sanpham">
+                                    <td class="ma maopen sorting_1">DH02</td>
+                                    <td class="loai maloaiopen">Casio</td>
+                                    <td class="sorting_1 imgopen"><img src="../anh/dongho2.jpg" style="width:138px"
+                                            class="imgtd"></td>
+                                    <td class="ten tenopen">Casio World Time AE</td>
+                                    <td class="sorting_1 giaopen">1.300.000</td>
+                                    <td class="soluongopen">30</td>
+                                    <td onclick="xoa($(this))" class="deletebutton"><i class="fas fa-trash-alt"></i>
+                                    </td>
+                                    <td onclick="sua($(this))" class="editbutton"><i class="fas fa-edit"></i></td>
+                                </tr>
+                                <tr id="sanpham">
+                                    <td class="ma maopen sorting_1">DH03</td>
+                                    <td class="loai maloaiopen">Tissot</td>
+                                    <td class="sorting_1 imgopen"><img src="../anh/dongho3.jpg" style="width:138px"
+                                            class="imgtd"></td>
+                                    <td class="ten tenopen">Tissot Le Locle Powermatic 80</td>
+                                    <td class="sorting_1 giaopen">23.000.000</td>
+                                    <td class="soluongopen">5</td>
+                                    <td onclick="xoa($(this))" class="deletebutton"><i class="fas fa-trash-alt"></i>
+                                    </td>
+                                    <td onclick="sua($(this))" class="editbutton"><i class="fas fa-edit"></i></td>
+                                </tr>
+                                <tr id="sanpham">
+                                    <td class="ma maopen sorting_1">DH04</td>
+                                    <td class="loai maloaiopen">Saga</td>
+                                    <td class="sorting_1 imgopen"><img src="../dhnu/53766-RGMGGE-2-1-399x399.webp"
+                                            style="width:138px" class="imgtd"></td>
+                                    <td class="ten tenopen">Saga 53766-GPZMGGE-2</td>
+                                    <td class="sorting_1 giaopen">6.800.000</td>
+                                    <td class="soluongopen">20</td>
+                                    <td onclick="xoa($(this))" class="deletebutton"><i class="fas fa-trash-alt"></i>
+                                    </td>
+                                    <td onclick="sua($(this))" class="editbutton"><i class="fas fa-edit"></i></td>
+                                </tr>
+                                <tr id="sanpham">
+                                    <td class="ma maopen sorting_1">DH05</td>
+                                    <td class="loai maloaiopen">Casio</td>
+                                    <td class="sorting_1 imgopen"><img src="../anh/MTP-1375D-1AVDF.webp"
+                                            style="width:138px" class="imgtd"></td>
+                                    <td class="ten tenopen">Casio MTP-1375D-1AVDF</td>
+                                    <td class="sorting_1 giaopen">2.177.000</td>
+                                    <td class="soluongopen">13</td>
+                                    <td onclick="xoa($(this))" class="deletebutton"><i class="fas fa-trash-alt"></i>
+                                    </td>
+                                    <td onclick="sua($(this))" class="editbutton"><i class="fas fa-edit"></i></td>
+                                </tr>
+                                <tr id="sanpham">
+                                    <td class="ma maopen sorting_1">DH06</td>
+                                    <td class="loai maloaiopen">Saga</td>
+                                    <td class="sorting_1 imgopen"><img src="../dhnu/3_53555-SVMWSV-2-399x399.webp"
+                                            style="width:138px" class="imgtd"></td>
+                                    <td class="ten tenopen">Saga 53555-SVMWSV</td>
+                                    <td class="sorting_1 giaopen">5.300.000</td>
+                                    <td class="soluongopen">25</td>
+                                    <td onclick="xoa($(this))" class="deletebutton"><i class="fas fa-trash-alt"></i>
+                                    </td>
+                                    <td onclick="sua($(this))" class="editbutton"><i class="fas fa-edit"></i></td>
+                                </tr>
+                                <tr id="sanpham">
+                                    <td class="ma maopen sorting_1">DH07</td>
+                                    <td class="loai maloaiopen">Orient</td>
+                                    <td class="sorting_1 imgopen"><img src="../anh/RA-AS0101S10B.webp"
+                                            style="width:138px" class="imgtd"></td>
+                                    <td class="ten tenopen">Orient Sun And Moon RA-AS0101S10B</td>
+                                    <td class="sorting_1 giaopen">12.850.000</td>
+                                    <td class="soluongopen">15</td>
+                                    <td onclick="xoa($(this))" class="deletebutton"><i class="fas fa-trash-alt"></i>
+                                    </td>
+                                    <td onclick="sua($(this))" class="editbutton"><i class="fas fa-edit"></i></td>
+                                </tr>
+                                <tr id="sanpham">
+                                    <td class="ma maopen sorting_1">DH08</td>
+                                    <td class="loai maloaiopen">Tissot</td>
+                                    <td class="sorting_1 imgopen"><img src="../anh/T137.427.11.011.00.webp"
+                                            style="width:138px" class="imgtd"></td>
+                                    <td class="ten tenopen">Tissot PRX T137.427.11.011.00</td>
+                                    <td class="sorting_1 giaopen">56.000.000</td>
+                                    <td class="soluongopen">3</td>
+                                    <td onclick="xoa($(this))" class="deletebutton"><i class="fas fa-trash-alt"></i>
+                                    </td>
+                                    <td onclick="sua($(this))" class="editbutton"><i class="fas fa-edit"></i></td>
+                                </tr>
+                                <tr id="sanpham">
+                                    <td class="ma maopen sorting_1">DH09</td>
+                                    <td class="loai maloaiopen">Saga</td>
+                                    <td class="sorting_1 imgopen"><img src="../dhnu/53766-SVSVSV-2-399x399.webp"
+                                            style="width:138px" class="imgtd"></td>
+                                    <td class="ten tenopen">Saga 53766-SVSVSV-2</td>
+                                    <td class="sorting_1 giaopen">7.600.000</td>
+                                    <td class="soluongopen">12</td>
+                                    <td onclick="xoa($(this))" class="deletebutton"><i class="fas fa-trash-alt"></i>
+                                    </td>
+                                    <td onclick="sua($(this))" class="editbutton"><i class="fas fa-edit"></i></td>
+                                </tr>
+                                <tr id="sanpham">
+                                    <td class="ma maopen sorting_1">DH10</td>
+                                    <td class="loai maloaiopen">Orient</td>
+                                    <td class="sorting_1 imgopen"><img src="../anh/RE-AV0B03B00B.webp"
+                                            style="width:138px" class="imgtd"></td>
+                                    <td class="ten tenopen">Orient Star RE-AV0B03B00B</td>
+                                    <td class="sorting_1 giaopen">25.750.000</td>
+                                    <td class="soluongopen">5</td>
+                                    <td onclick="xoa($(this))" class="deletebutton"><i class="fas fa-trash-alt"></i>
+                                    </td>
+                                    <td onclick="sua($(this))" class="editbutton"><i class="fas fa-edit"></i></td>
+                                </tr>
+                                <tr id="sanpham">
+                                    <td class="ma maopen sorting_1">DH11</td>
+                                    <td class="loai maloaiopen">Tissot</td>
+                                    <td class="sorting_1 imgopen"><img src="../anh/T006.407.16.033.00-1.jpg" style="width:138px" class="imgtd"></td>
+                                    <td class="ten tenopen">Tissot Le Locle T006.407.16.033.00</td>
+                                    <td class="sorting_1 giaopen">17.500.000</td>
+                                    <td class="soluongopen">6</td>
+                                    <td onclick="xoa($(this))" class="deletebutton"><i class="fas fa-trash-alt"></i>
+                                    </td>
+                                    <td onclick="sua($(this))" class="editbutton"><i class="fas fa-edit"></i></td>
+                                </tr>
+                                <tr id="sanpham">
+                                    <td class="ma maopen sorting_1">DH12</td>
+                                    <td class="loai maloaiopen">Saga</td>
+                                    <td class="sorting_1 imgopen"><img src="../anh/53458-SVMWBK-2.jpg" style="width:138px" class="imgtd"></td>
+                                    <td class="ten tenopen">Saga 53458-SVMWBK-2</td>
+                                    <td class="sorting_1 giaopen">8.080.000</td>
+                                    <td class="soluongopen">11</td>
+                                    <td onclick="xoa($(this))" class="deletebutton"><i class="fas fa-trash-alt"></i>
+                                    </td>
+                                    <td onclick="sua($(this))" class="editbutton"><i class="fas fa-edit"></i></td>
+                                </tr>
+                                <tr id="sanpham" class="moiSuaNe"></tr>
+                            </tbody>
+                        </table>
+                </fieldset>
+            </div>
+        </div>
+        </div>
+
+        <!--------Quan ly don hang----------->
+        <div class="quanLyDonHang none container-1">
+            <div class="chitietdonhang container-1" style="display: none;">
+
+                <table id="chitietdonhang-table">
+                    <tr style="color: #131313;">
+                        <th id="dhhead">Mã đơn hàng :PZ-2203</th>
+                        <th id="dhhead">Thời gian: T4/22/12</th>
+                        <th id="close_ctdh" onclick="close_ctdh()">&times;</th>
+                    </tr>
+                    <tr style="background-color: #ddd;">
+                        <th>Hảng đồng hồ</th>
+                        <th>Tên đồng hồ</th>
+                        <th>Ảnh</th>
+                        <th>Giá</th>
+                        <th>Số lượng</th>
+                    </tr>
+                    <tr>
+                        <td>Orient</td>
+                        <td>ORIENT OPEN HEART RA-AR0001S10B</td>
+                        <td><img src="../anh/dongho1.jpg" class="chitietimg" alt=""></td>
+                        <td>11.760.000</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>Tissot</td>
+                        <td>Tissot Le Locle Powermatic 80</td>
+                        <td><img src="../anh/dongho3.jpg" class="chitietimg" alt=""></td>
+                        <td>23.000.000</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>Saga</td>
+                        <td>Saga 53555-SVMWSV</td>
+                        <td><img src="../dhnu/3_53555-SVMWSV-2-399x399.webp" class="chitietimg" alt=""></td>
+                        <td>5.300.000</td>
+                        <td>3</td>
+                    </tr>
+                </table>
+            </div>
+            <h2>THỐNG KÊ ĐƠN HÀNG</h2>
+            <div class="noidungkiemsoat">
+                <ul>
+                    <li class="ChonChuaXacThuc">
+                        <input checked value="chuaxacthuc" type="radio" id="f-option" name="trangthai">
+                        <label for="f-option">CHƯA XÁC THỰC</label>
+
+                        <div class="check"></div>
+                    </li>
+
+                    <li class="ChonDaXacThuc">
+                        <input value="xacthuc" type="radio" id="s-option" name="trangthai">
+                        <label for="s-option">ĐÃ XÁC THỰC</label>
+
+                        <div class="check">
+                            <div class="inside"></div>
+                        </div>
+                    </li>
+
+                    <li class="chonDaHoanThien">
+                        <input value="dahoanthien" type="radio" id="t-option" name="trangthai">
+                        <label for="t-option">ĐÃ HOÀN THIỆN</label>
+
+                        <div class="check">
+                            <div class="inside"></div>
+                        </div>
+                    </li>
+                </ul>
+
+                <article class="donhanghead">
+                    <div class="avtimg">Avata</div>
+                    <div class="nddonhang">
+                        <p class="headten">Tên</p>
+                    </div>
+                    <div class="nddonhang">
+                        <p class="headten">Địa chỉ</p>
+                    </div>
+                    <div class="nddonhang">
+                        <p>Số điện thoại</p>
+                    </div>
+
+                    <div class="nddonhang">
+                        <p>Trạng thái</p>
+                    </div>
+
+                    <div class="nddonhang">
+                        <p>Chi tiết</p>
+                    </div>
+                </article>
+
+                <article class="donhang hienChonChuaXacThuc">
+                    <img src="../anh/anhchu.jpg" class="div-table__img" />
+                    <div class="noidungdonhang">
+                        <p>Phạm Văn Cương</p>
+                    </div>
+                    <div class="noidungdonhang">
+                        <p>123 Văn Nhuế, Mỹ Hào, Hưng Yên</p>
+                    </div>
+                    <div class="nddonhang">
+                        <p>0165.636.0592</p>
+                    </div>
+
+                    <div class="nddonhang trangthaidonhang">
+                        <p class="chuaxacthuc" id="checkchuaxacthuc">Chưa xác thực</p>
+                    </div>
+
+                    <div class="bars-dieuChinh" onclick="damua()">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </article>
+
+                <article class="donhang hienChonDaXacThuc" style="display: none;">
+                    <img src="../anh/anhchu.jpg" class="div-table__img" />
+                    <div class="nddonhang">
+                        <p>Nguyễn Văn Tuấn</p>
+                
+                    </div>
+                    <div class="nddonhang">
+                        <p>Xóm 4, Yên Vĩnh, Khoái Châu, Hưng Yên</p>
+                    </div>
+                    <div class="nddonhang">
+                        <p>0974.019.488</p>
+                    </div>
+                
+                    <div class="nddonhang trangthaidonhang">
+                        <p class="xacthuc" id="checkxacthuc">Đã xác thực</p>
+                    </div>
+                
+                    <div class="bars-dieuChinh" onclick="damua()">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </article>
+
+                <article class="donhang hienChonDaXacThuc" style="display: none;">
+                    <img src="../anh/anhchu.jpg" class="div-table__img" />
+                    <div class="nddonhang">
+                        <p>Lê Xuân Sơn</p>
+                    </div>
+                    <div class="nddonhang">
+                        <p>234 Bình Minh, Khoái Châu, Hưng yên</p>
+                    </div>
+                    <div class="nddonhang">
+                        <p>0445.627.864</p>
+                    </div>
+                    <div class="nddonhang trangthaidonhang">
+                        <p class="xacthuc " id="checkxacthuc">Đã xác thực</p>
+                    </div>
+
+                    <div class="bars-dieuChinh" onclick="damua()">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </article>
+
+                <article class="donhang hienChonDaXacThuc" style="display: none;">
+                    <img src="../anh/anhchu.jpg" class="div-table__img" />
+                    <div class="nddonhang">
+                        <p>Mai Thanh Huyền</p>
+                    </div>
+                    <div class="nddonhang">
+                        <p>Số 98, Hoàng Mai, Hà Nội</p>
+                    </div>
+                    <div class="nddonhang">
+                        <p>0136.685.861</p>
+                    </div>
+
+                    <div class="nddonhang trangthaidonhang">
+                        <p class="xacthuc" id="checkxacthuc">Đã xác thực</p>
+                    </div>
+
+                    <div class="bars-dieuChinh" onclick="damua()">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </article>
+
+                <article class="donhang hienChonChuaXacThuc">
+                    <img src="../anh/anhchu.jpg" class="div-table__img" />
+                    <div class="nddonhang">
+                        <p>Bùi Văn Huy</p>
+                    </div>
+                    <div class="nddonhang">
+                        <p>Số 345, Quận 7, TP.Hồ Chí Minh</p>
+                    </div>
+                    <div class="nddonhang">
+                        <p>0625.376.363</p>
+                    </div>
+
+                    <div class="nddonhang trangthaidonhang">
+                        <p class="chuaxacthuc" id="checkchuaxacthuc">Chưa xác thực</p>
+                    </div>
+
+                    <div class="bars-dieuChinh" onclick="damua()">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </article>
+
+                <article class="donhang hienChonDaXacThuc" style="display: none;">
+                    <img src="../anh/anhchu.jpg" class="div-table__img" />
+                    <div class="nddonhang">
+                        <p>Ngô Bá Linh</p>
+                    </div>
+                    <div class="nddonhang">
+                        <p>Bãi sậy 1, Tân Dân, Khoái Châu, Hưng Yên</p>
+                    </div>
+                    <div class="nddonhang">
+                        <p>0935.628.255</p>
+                    </div>
+
+                    <div class="nddonhang trangthaidonhang">
+                        <p class="xacthuc" id="checkxacthuc">Đã xác thực</p>
+                    </div>
+
+                    <div class="bars-dieuChinh" onclick="damua()">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </article>
+
+                <article class="donhang hienChonDaThucHien" style="display: none;">
+                    <img src="../anh/anhchu.jpg" class="div-table__img" />
+                    <div class="nddonhang">
+                        <p>Nguyễn Thị Nga</p>
+                    </div>
+                    <div class="nddonhang">
+                        <p>Số 987, Nam Sách, Hải Dương</p>
+                    </div>
+                    <div class="nddonhang">
+                        <p>0486.548.615</p>
+                    </div>
+
+                    <div class="nddonhang trangthaidonhang">
+                        <p class="dathuchien" id="checkdathuchien">Đã thực hiện</p>
+                    </div>
+
+                    <div class="bars-dieuChinh" onclick="damua()">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </article>
+            </div>
+
+            <div class="dieuChinhDonHang" style="display: none;">
+                <div class="menu">
+                    <ul class="menu-item1">
+                        <li class="menu-subitem menu-subitem1 xoa"><button onclick="xacnhandonhang()" class="menu-button">Xác nhận đơn hàng</button></li>
+                        <li class="menu-subitem menu-subitem2 xoa"><button onclick="huyxacDongHohang()" class="menu-button">Huỷ xác thực</button></li>
+                        <li class="menu-subitem menu-subitem3  canxn xoa"><button onclick="danhdauhoantat()" class="menu-button">Đánh dấu hoàn thiện</button></li>
+                        <li class="menu-subitem menu-subitem4" style="border-bottom: 1px solid #333;"><button onclick="xemCTDonHang()" class="menu-button  chitiet">Xem chi tiết</button></li>
+                    </ul>
+                    <ul class="menu-item2">
+                        <li class="menu-subitem menu-subitem5 xoa"><button onclick="xoadonhang()" class="menu-button menu-button-delete">Xoá đơn hàng</button></li>
+                        <li class="menu-subitem menu-subitem5 xoa"><button class="menu-button menu-button-cancel">Thoát</button></li>
+                    </ul>
+                </div>
+            </div> 
+        </div>
+
+
+        <!-- Khách hàng -->
+        <div class="quanLyKhachHang none container-1">
+            <h2>QUẢN LÝ KHÁCH HÀNG</h2>
+            <div class="khachhang">
+                <table id="listKhachHang">
+                    <thead style="background: #ddd;">
+                        <tr>
+                            <!-- Theo độ rộng của table content -->
+                            <th style="width: 5%">STT <i class="fa fa-sort"></i></th>
+                            <th style="width: 15%">HỌ VÀ TÊN <i class="fa fa-sort"></i></th>
+                            <th style="width: 20%">SDT <i class="fa fa-sort"></i></th>
+                            <th style="width: 20%">TÀI KHOẢN <i class="fa fa-sort"></i></th>
+                            <th style="width: 10%">HÀNH ĐỘNG (Chăn/Mở chặn)</th>
+                        </tr>
+                    </thead>
+
+                    <tbody style="text-align: center; background-color: antiquewhite;">
+                        <tr id="KH">
+                            <td class="stt">1</td>
+                            <td class="hoten">Nguyễn Văn Việt</td>
+                            <td class="sdt">123456789</td>
+                            <td class="tendangnhap">Viet</td>
+                            <td>
+                                <div class="tooltip1">
+                                    <label class="switch">
+                                        <input type="checkbox" onclick="voHieuHoaNguoiDung(this,'')">
+                                        <span class="slider round"></span>
+                                    </label>
+                                    <span class="tooltiptext">Khóa</span>
+                                </div>
+                                <div class="tooltip2">
+                                    <i class="fa fa-remove" onclick="xoaNguoiDung($(this))"></i>
+                                    <span class="tooltiptext">Xóa</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr id="KH">
+                            <td class="stt">2</td>
+                            <td class="hoten">Trần Duy Hoàng</td>
+                            <td class="sdt">987654321</td>
+                            <td class="tendangnhap">Hoang</td>
+                            <td>
+                                <div class="tooltip1">
+                                    <label class="switch">
+                                        <input type="checkbox" onclick="voHieuHoaNguoiDung(this,'')">
+                                        <span class="slider round"></span>
+                                    </label>
+                                    <span class="tooltiptext">Khóa</span>
+                                </div>
+                                <div class="tooltip2">
+                                    <i class="fa fa-remove" onclick="xoaNguoiDung($(this))"></i>
+                                    <span class="tooltiptext">Xóa</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr id="KH">
+                            <td class="stt">3</td>
+                            <td class="hoten">Vũ Năng Anh Hoàng</td>
+                            <td class="sdt">0989048514</td>
+                            <td class="tendangnhap">Nang</td>
+                            <td>
+                                <div class="tooltip1">
+                                    <label class="switch">
+                                        <input type="checkbox" onclick="voHieuHoaNguoiDung(this,'')">
+                                        <span class="slider round"></span>
+                                    </label>
+                                    <span class="tooltiptext">Khóa</span>
+                                </div>
+                                <div class="tooltip2">
+                                    <i class="fa fa-remove" onclick="xoaNguoiDung($(this))"></i>
+                                    <span class="tooltiptext">Xóa</span>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        </div>
+
+        <!--Quan ly doanh thu-->
+        <div class="thongKeDoanhThu none container-1">
+            <h2>THỐNG KÊ DOANH THU</h2>
+            <div class="dulieu">
+                <div class="dl_motkhoi">
+                    <div class="dl_trai">
+                        <h3 class="solieu slsp">123</h3>
+                        <span>Đơn hàng</span>
+                    </div>
+                    <div class="dl_phai">
+                        <i class="fas fa-bars" style="margin-top:-60px;margin-left: -83px;font-size: 90px;color: #eee;opacity: 0.3;"></i>
+                    </div>
+                </div>
+                <!-- hết 1 khối -->
+                <div class="dl_motkhoi">
+                    <div class="dl_trai">
+                        <h3 class="solieu tslsp">456</h3>
+                        <span>Tổng số lượng đồng hồ bán ra</span>
+                    </div>
+                    <div class="dl_phai">
+                        <i class="fas fa-plus"
+                            style="margin-top: -60px;margin-left: -83px;font-size: 90px;color: #fff;opacity: 0.3;"></i>
+                    </div>
+                </div>
+                <!-- hết 1 khối -->
+                <div class="dl_motkhoi">
+                    <div class="dl_trai">
+                        <h3 class="solieu tg">123456789</h3>
+                        <span>Tổng giá trị sản phẩm</span>
+                    </div>
+                    <div class="dl_phai">
+                        <i class="fas fa-dollar-sign"
+                            style="margin-top: -60px;color: #13131333;margin-left: -58px; font-size: 100px;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="../js/Jquery.min.js"></script>
+    <script src="../js/admin.js"></script>
+</body>
+
 </html>

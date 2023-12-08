@@ -43,6 +43,39 @@
     z-index: 2; /* Đặt z-index cao hơn để đảm bảo nó hiển thị trên #lsmua */
     cursor: pointer;
 }
+/* Thêm khối mã CSS này hoặc cập nhật kiểu hiện tại của bạn */
+.product-history-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.product-history-item img {
+    width: 150px; 
+    height: 150px; 
+    margin-right: 10px;
+}
+
+.product-history-item .product-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-history-item p,
+.product-history-item h2 {
+    margin: 0;
+    padding-bottom: 10px;
+}
+.product-history-item p
+{
+    font-size: 18px;
+    font-weight: bold;
+}
+.product-history-item h2
+{
+    font-size: 16px;
+    color: #888;
+}
 #textlsmua
 {
     text-align: center;

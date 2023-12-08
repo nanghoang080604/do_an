@@ -68,7 +68,6 @@
     display: inline;
 
 }
-
 #cartItems .decrease
 {
     margin-top: -23px;
@@ -79,7 +78,7 @@
     margin-top: -20px;
 }
 #cartItems input {
-    width: 25px;
+    width: 13px;
     height: 10px;
     margin-top: 33px;
     text-align: center;
