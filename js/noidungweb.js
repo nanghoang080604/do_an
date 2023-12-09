@@ -616,13 +616,13 @@ function createProductHistory(product) {
 /*---------------thông báo tìm kiếm ở các html chi tiết------------*/
 function tbao_tkiemphu()
 {
-    window.location.href = "./index1.html";
+    window.location.href = "./index.html";
     alert("Bạn đã được sang trang HTML chính mời bạn tìm kiếm ở đây");
 }
 //ở chi tiết sản phẩm đã đang nhập
 function tbao_tkiem()
 {
-    window.location.href = "./index2.html";
+    window.location.href = "./chinh.html";
     alert("Bạn đã được sang trang HTML chính mời bạn tìm kiếm ở đây");
 }
 
