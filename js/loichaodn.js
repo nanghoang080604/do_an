@@ -10,7 +10,7 @@ function checkAndSubmit() {
   {
     if (sdtInput.checkValidity() && pwInput.checkValidity()) {
       // Chuyển hướng đến trang khác
-      window.location.href = "./index2.html";
+      window.location.href = "./chinh.html";
       return true;
     } else {
       alert("Vui lòng điền đủ thông tin.");
@@ -31,7 +31,7 @@ function checkAndSubmitRegistration() {
   {
     saveRegistrationInfo();
     // Chuyển hướng đến trang khác
-    window.location.href = "./index2.html";
+    window.location.href = "./chinh.html";
     return true;
   } else if (pwInput.value !== pwagInput.value) {
     alert("Mật khẩu xác nhận sai");
